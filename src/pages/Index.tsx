@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -45,6 +46,17 @@ const Index = () => {
             'Developed a system achieving 97.8% accuracy using Random Forest models with wavelet transform features.',
             'Created a real-time gesture recognition framework capable of distinguishing between 6 distinct hand movements.',
             'Demonstrated potential applications in human-computer interfaces and prosthetic control systems.'
+          ]
+        },
+        {
+          title: 'Sustainable Tennis Ball Management ML Framework',
+          company: 'Independent Research',
+          period: '2023',
+          description: [
+            'Developed an open-access machine learning framework for optimizing tennis ball usage and reducing environmental impact.',
+            'Created a classification system to accurately assess ball condition and determine optimal repurposing paths.',
+            'Implemented a sustainability tracking system reducing waste by 40% at participating tennis facilities.',
+            'Published findings demonstrating significant cost savings and environmental benefits for tennis clubs and stores.'
           ]
         },
         {
