@@ -84,7 +84,8 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const handleCategoryChange = (index: number) => {
     if (transitioning || index === activeCategory) return;
     
-    setDirection('next');
+    // Set direction based on which category we're moving to
+    setDirection(index > activeCategory ? 'next' : 'prev');
     setTransitioning(true);
     setTimeout(() => {
       setActiveCategory(index);
@@ -122,10 +123,10 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
           ))}
         </div>
         
-        <div className="card-container relative min-h-[400px] mb-8">
+        <div className="card-container relative min-h-[400px] mb-8 overflow-hidden">
           {isCollectedCategory ? (
             // Special rendering for Research and Leadership categories - all experiences on one card
-            <div className="flashcard-wrapper absolute inset-0 z-10">
+            <div className={`flashcard-wrapper absolute inset-0 z-10 ${transitioning ? (direction === 'next' ? 'slide-out-left' : 'slide-out-right') : ''}`}>
               <div className="flashcard h-full">
                 <div className="terminal-header mb-4">
                   <div className="terminal-dot bg-red-500"></div>
@@ -165,17 +166,17 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
               if (index === activeIndex) {
                 className = "flashcard-wrapper absolute inset-0 z-10";
                 if (transitioning) {
-                  className += " discarded";
+                  className += direction === 'next' ? " slide-out-left" : " slide-out-right";
                 }
               } else if (direction === 'next' && index === activeIndex + 1) {
                 className = "flashcard-wrapper absolute inset-0 z-0";
                 if (transitioning) {
-                  className += " next";
+                  className += " slide-in-right";
                 }
               } else if (direction === 'prev' && index === activeIndex - 1) {
                 className = "flashcard-wrapper absolute inset-0 z-0";
                 if (transitioning) {
-                  className += " next";
+                  className += " slide-in-left";
                 }
               }
               
