@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Terminal as TerminalIcon } from 'lucide-react';
+import { ArrowDown, Terminal as TerminalIcon, Mail, Linkedin, Github } from 'lucide-react';
 
 const Terminal = () => {
   const [displayText, setDisplayText] = useState('');
   const [cursorPosition, setCursorPosition] = useState(0);
   const [showArrow, setShowArrow] = useState(false);
+  const [showLinks, setShowLinks] = useState(false);
   
   const fullText = "Dheeraj Tallapragada\nData Science & ML Enthusiast\nFounder, Researcher, Leader";
 
@@ -19,8 +20,9 @@ const Terminal = () => {
       return () => clearTimeout(timeout);
     } else {
       const timeout = setTimeout(() => {
+        setShowLinks(true);
         setShowArrow(true);
-      }, 1000);
+      }, 500);
       
       return () => clearTimeout(timeout);
     }
@@ -61,6 +63,40 @@ const Terminal = () => {
                    <span className="animate-cursor-blink">_</span>}
                 </div>
               ))}
+            </div>
+            
+            {/* Social Links */}
+            <div className={`flex flex-wrap justify-center gap-4 mt-6 transition-opacity duration-500 ${showLinks ? 'opacity-100' : 'opacity-0'}`}>
+              <a 
+                href="mailto:tsaidheeraj@gmail.com" 
+                className="social-button bg-blue-500 hover:bg-blue-600 transition-colors text-white px-6 py-3 rounded-lg flex items-center gap-2 font-medium"
+                aria-label="Contact Me"
+              >
+                <Mail className="h-5 w-5" />
+                <span>Contact Me</span>
+              </a>
+              
+              <a 
+                href="http://bit.ly/DheerajLinkedIn" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-button bg-gray-100 hover:bg-gray-200 transition-colors text-gray-800 px-6 py-3 rounded-lg flex items-center gap-2 font-medium"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+                <span>LinkedIn</span>
+              </a>
+              
+              <a 
+                href="https://github.com/draj222" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-button bg-gray-100 hover:bg-gray-200 transition-colors text-gray-800 px-6 py-3 rounded-lg flex items-center gap-2 font-medium"
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
+                <span>GitHub</span>
+              </a>
             </div>
             
             <div className="mt-6 text-terminal-muted opacity-0 animate-fade-in" style={{ animationDelay: "1.5s" }}>
