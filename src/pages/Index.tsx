@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -168,6 +169,17 @@ const Index = () => {
             'Implemented ML algorithms to analyze user behavior patterns and provide tailored eco-friendly recommendations.',
             'Created features to visualize environmental impact metrics and gamify sustainability goals for 500+ users.',
             'Website: acecycle.org'
+          ]
+        },
+        {
+          title: 'Space Safety Vision System',
+          company: 'Stellar Hacks Hackathon',
+          period: '2023',
+          description: [
+            'Engineered an advanced computer vision platform enhancing astronaut safety during extravehicular activities in space.',
+            'Developed neural network architecture capable of real-time detection and highlighting of microscopic hazardous particles.',
+            'Integrated image enhancement algorithms to improve visibility in extreme lighting conditions encountered in orbit.',
+            'Designed early warning system reducing risk factors for spacewalking astronauts by identifying approaching debris.'
           ]
         },
         {
