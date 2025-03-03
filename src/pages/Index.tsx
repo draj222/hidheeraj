@@ -117,6 +117,17 @@ const Index = () => {
       icon: <Award className="h-4 w-4" />,
       experiences: [
         {
+          title: 'AceCycle App',
+          company: 'AceCycle Initiative',
+          period: '2024',
+          description: [
+            'Co-developed a machine learning powered app that tracks carbon footprint and suggests personalized sustainability actions for users.',
+            'Implemented ML algorithms to analyze user behavior patterns and provide tailored eco-friendly recommendations.',
+            'Created features to visualize environmental impact metrics and gamify sustainability goals for 500+ users.',
+            'Website: <a href="https://www.acecycle.org/" target="_blank" rel="noopener noreferrer" class="text-terminal-highlight underline">acecycle.org</a>'
+          ]
+        },
+        {
           title: 'AI Healthcare Solution',
           company: 'Independent Project',
           period: '2023',
@@ -134,16 +145,6 @@ const Index = () => {
             'Created an ML-powered air quality prediction system.',
             'Published research on environmental monitoring techniques.',
             'Technology designed to support environmental sustainability efforts.'
-          ]
-        },
-        {
-          title: 'Carbon Footprint Tracking App',
-          company: 'AceCycle Initiative',
-          period: '2024',
-          description: [
-            'Co-developed a mobile application to help users track and reduce their carbon footprint.',
-            'App achieved 500+ downloads.',
-            'Used to raise awareness about personal environmental impact.'
           ]
         }
       ]
