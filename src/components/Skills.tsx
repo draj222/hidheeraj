@@ -72,13 +72,13 @@ const Skills = () => {
                 <h3 className="text-terminal-highlight font-mono">{category.title}</h3>
               </div>
               
-              <ul className="space-y-2">
+              <div className="grid grid-cols-3 gap-2">
                 {category.skills.map((skill, i) => (
-                  <li key={i} className="terminal-list-item">
+                  <div key={i} className="terminal-list-item text-center text-sm">
                     {skill}
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
