@@ -183,6 +183,17 @@ const Index = () => {
           ]
         },
         {
+          title: 'Precision Cosine Algorithm',
+          company: 'Collaboration with Professor Alain Olavarrieta, Las Positas College',
+          period: 'Spring 2024',
+          description: [
+            'Developed a Python algorithm calculating cosine values to 15 decimal places using Taylor/Maclaurin series foundations.',
+            'Researched mathematical series applications and their real-world correlations to enhance algorithm efficiency.',
+            'Implemented rigorous testing methodologies to validate computational accuracy within system limitations.',
+            'Gained valuable experience in advanced mathematical concepts, research methods, and collaborative development.'
+          ]
+        },
+        {
           title: 'QR Code Scanner',
           company: 'Independent Project',
           period: '2023',
