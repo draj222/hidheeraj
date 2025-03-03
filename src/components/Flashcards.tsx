@@ -24,8 +24,8 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Special case for Research and Leadership categories to show all experiences on one page
-  const isCollectedCategory = ['Research', 'Leadership'].includes(categories[activeCategory]?.title);
+  // Special case for Research, Leadership, and Projects categories to show all experiences on one page
+  const isCollectedCategory = ['Research', 'Leadership', 'Projects'].includes(categories[activeCategory]?.title);
 
   const handleNext = () => {
     if (transitioning) return;
@@ -124,7 +124,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
         
         <div className="card-container relative min-h-[400px] mb-8">
           {isCollectedCategory ? (
-            // Special rendering for Research and Leadership categories - all experiences on one card
+            // Special rendering for Research, Leadership, and Projects categories - all experiences on one card
             <div className="flashcard-wrapper absolute inset-0 z-10">
               <div className="flashcard h-full">
                 <div className="terminal-header mb-4">
