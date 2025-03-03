@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+
+import React, { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { Terminal, AlertTriangle, ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,13 +14,40 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-terminal-dark p-4">
+      <div className="terminal-window w-full max-w-md">
+        <div className="terminal-header">
+          <div className="terminal-dot bg-red-500"></div>
+          <div className="terminal-dot bg-yellow-500"></div>
+          <div className="terminal-dot bg-green-500"></div>
+          <span className="ml-2 text-xs font-mono text-terminal-text/60">error.sh</span>
+        </div>
+        
+        <div className="terminal-content p-6">
+          <div className="flex items-center justify-center text-terminal-orange mb-6">
+            <AlertTriangle className="h-16 w-16" />
+          </div>
+          
+          <div className="code-block">
+            <div className="text-terminal-orange">$ find "{location.pathname}"</div>
+            <div className="text-terminal-text mt-2">
+              <span className="text-red-500">ERROR 404:</span> Path not found
+            </div>
+            <div className="text-terminal-text mt-2">
+              The requested resource "{location.pathname}" does not exist on this server.
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <Link 
+              to="/" 
+              className="terminal-button inline-flex items-center gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Return to Terminal
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
