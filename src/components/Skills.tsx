@@ -1,28 +1,33 @@
 
 import React from 'react';
-import { Code, LineChart, Users, Cpu } from 'lucide-react';
+import { Code, LineChart, Users, Cpu, Globe, Terminal, FileText } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Programming',
+      title: 'Programming Languages',
       icon: <Code className="h-5 w-5" />,
-      skills: ['Python', 'Java', 'HTML', 'CSS', 'JavaScript', 'Swift']
+      skills: ['Python', 'Java', 'JavaScript', 'HTML/CSS', 'C++', 'C', 'TypeScript', 'C#', 'Swift']
     },
     {
-      title: 'Data & Analytics',
-      icon: <LineChart className="h-5 w-5" />,
-      skills: ['Statistical Analysis', 'Research', 'Machine Learning']
-    },
-    {
-      title: 'Leadership',
-      icon: <Users className="h-5 w-5" />,
-      skills: ['Curriculum Development', 'Leadership', 'Event Management']
+      title: 'Web Development',
+      icon: <Globe className="h-5 w-5" />,
+      skills: ['React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'Responsive Design']
     },
     {
       title: 'Machine Learning',
       icon: <Cpu className="h-5 w-5" />,
-      skills: ['Neural Networks', 'Model Training', 'Data Preprocessing']
+      skills: ['Neural Networks', 'Computer Vision', 'NLP', 'TensorFlow', 'PyTorch', 'Data Analysis', 'Model Training', 'Data Preprocessing']
+    },
+    {
+      title: 'Development Tools',
+      icon: <Terminal className="h-5 w-5" />,
+      skills: ['Git', 'Visual Studio Code', 'IntelliJ', 'CLion', 'PyCharm', 'Unity', 'MATLAB']
+    },
+    {
+      title: 'Other Skills',
+      icon: <FileText className="h-5 w-5" />,
+      skills: ['Research Methodology', 'Technical Writing', 'Public Speaking', 'Leadership', 'Project Management', 'Statistical Analysis', 'Curriculum Development']
     }
   ];
 
@@ -46,17 +51,18 @@ const Skills = () => {
               <div className="ml-4">
                 <div className="text-terminal-blue">def</div> <span className="text-terminal-green">__init__</span>(self):
                 <div className="ml-4">
-                  self.programming = ["Python", "Java", "HTML", "CSS", "JavaScript", "Swift"]<br />
-                  self.data_science = ["Statistical Analysis", "Research", "Machine Learning"]<br />
-                  self.leadership = ["Curriculum Development", "Leadership", "Event Management"]<br />
-                  self.specializations = ["AI in Healthcare", "Environmental Monitoring"]
+                  self.programming_languages = ["Python", "Java", "JavaScript", "HTML/CSS", "C++", "C", "TypeScript", "C#", "Swift"]<br />
+                  self.web_development = ["React.js", "Next.js", "Tailwind CSS", "Bootstrap", "Responsive Design"]<br />
+                  self.machine_learning = ["Neural Networks", "Computer Vision", "NLP", "TensorFlow", "PyTorch", "Data Analysis"]<br />
+                  self.dev_tools = ["Git", "Visual Studio Code", "IntelliJ", "CLion", "PyCharm", "Unity", "MATLAB"]<br />
+                  self.other_skills = ["Research Methodology", "Technical Writing", "Public Speaking", "Leadership", "Project Management"]
                 </div>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
           {skillCategories.map((category, index) => (
             <div key={index} className="terminal-glass p-6 h-full">
               <div className="flex items-center gap-3 mb-4">
