@@ -18,6 +18,11 @@ const Awards = () => {
       title: 'American Invitational Mathematics Examination (AIME 1)',
       subtitle: 'Scored 10/15',
       icon: <Medal className="h-5 w-5 text-terminal-highlight" />,
+      description: [
+        'Qualified for and excelled in the highly selective American Invitational Mathematics Examination.',
+        'Reserved for top 5% of AMC participants, representing exceptional problem-solving abilities.',
+        'Solved complex problems requiring innovative mathematical techniques and deep conceptual understanding.'
+      ]
     },
     {
       title: 'President\'s Volunteer Service Award',
@@ -33,6 +38,11 @@ const Awards = () => {
       title: '$3K Research Grant',
       subtitle: 'Issued by Czech Technical University in Prague',
       icon: <Beaker className="h-5 w-5 text-terminal-highlight" />,
+      description: [
+        'Awarded competitive funding for innovative environmental modeling research with Dr. Marek Miltner.',
+        'Developed novel neural network architectures for forecasting atmospheric pollutant concentrations.',
+        'Recognized for creating reliable prediction systems with unprecedented accuracy metrics between 99.87-100%.'
+      ]
     },
     {
       title: 'Google-Sponsored Hackathon (Stellar Hacks)',
