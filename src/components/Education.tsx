@@ -26,7 +26,7 @@ const Education = () => {
                 <div className="ml-8">
                   <p className="text-terminal-muted text-sm">Dublin, CA</p>
                   <div className="flex justify-between my-1">
-                    <p className="text-terminal-text">High School Education</p>
+                    <p className="text-terminal-text">Senior (12th grade)</p>
                   </div>
                 </div>
               </div>
@@ -39,7 +39,7 @@ const Education = () => {
                 <div className="ml-8">
                   <p className="text-terminal-muted text-sm">Livermore, CA</p>
                   <div className="flex justify-between my-1">
-                    <p className="text-terminal-text">Dual-enrolled</p>
+                    <p className="text-terminal-text">1/70 students selected for TVROP middle college program</p>
                   </div>
                 </div>
               </div>
