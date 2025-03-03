@@ -24,8 +24,8 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Special case for Research category to show all experiences on one page
-  const isResearchCategory = categories[activeCategory]?.title === 'Research';
+  // Special case for Research and Leadership categories to show all experiences on one page
+  const isCollectedCategory = ['Research', 'Leadership'].includes(categories[activeCategory]?.title);
 
   const handleNext = () => {
     if (transitioning) return;
@@ -96,8 +96,8 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
         </div>
         
         <div className="card-container relative min-h-[400px] mb-8">
-          {isResearchCategory ? (
-            // Special rendering for Research category - all experiences on one card
+          {isCollectedCategory ? (
+            // Special rendering for Research and Leadership categories - all experiences on one card
             <div className="flashcard-wrapper absolute inset-0 z-10">
               <div className="flashcard h-full">
                 <div className="terminal-header mb-4">
@@ -188,7 +188,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
         
         <div className="flex justify-between items-center">
           <div className="text-sm font-mono text-terminal-muted">
-            {isResearchCategory ? 
+            {isCollectedCategory ? 
               "1 / 1" : 
               `${activeIndex + 1} / ${categories[activeCategory].experiences.length}`
             }
@@ -197,7 +197,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
           <div className="flex gap-2">
             <button
               onClick={handlePrev}
-              disabled={isResearchCategory || activeIndex === 0 || transitioning}
+              disabled={isCollectedCategory || activeIndex === 0 || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Previous"
             >
@@ -206,7 +206,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
             
             <button
               onClick={handleNext}
-              disabled={isResearchCategory || activeIndex === categories[activeCategory].experiences.length - 1 || transitioning}
+              disabled={isCollectedCategory || activeIndex === categories[activeCategory].experiences.length - 1 || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Next"
             >
