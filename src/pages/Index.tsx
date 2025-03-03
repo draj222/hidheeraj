@@ -150,6 +150,17 @@ const Index = () => {
           ]
         },
         {
+          title: 'EMG-Based Gesture Recognition',
+          company: 'Independent Research',
+          period: '2023',
+          description: [
+            'Conducted independent research on multichannel EMG signals for accurate hand gesture recognition using advanced ML techniques.',
+            'Developed a system achieving 97.8% accuracy using Random Forest models with wavelet transform features.',
+            'Created a real-time gesture recognition framework capable of distinguishing between 6 distinct hand movements.',
+            'Demonstrated potential applications in human-computer interfaces and prosthetic control systems.'
+          ]
+        },
+        {
           title: 'AI Healthcare Solution',
           company: 'Independent Project',
           period: '2023',
