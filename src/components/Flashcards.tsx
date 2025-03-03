@@ -36,16 +36,16 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
     if (activeIndex === experiences.length - 1 && activeCategory < categories.length - 1) {
       setDirection('next');
       setTransitioning(true);
+      
+      // Immediately proceed to the next category without requiring additional clicks
       setTimeout(() => {
         setActiveCategory(activeCategory + 1);
         setActiveIndex(0);
         setTransitioning(false);
       }, 500);
-      return;
-    }
-    
+    } 
     // Regular next experience in the same category
-    if (activeIndex < experiences.length - 1) {
+    else if (activeIndex < experiences.length - 1) {
       setDirection('next');
       setTransitioning(true);
       setTimeout(() => {
@@ -62,16 +62,16 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
     if (activeIndex === 0 && activeCategory > 0) {
       setDirection('prev');
       setTransitioning(true);
+      
+      // Immediately go to the previous category without requiring additional clicks
       setTimeout(() => {
         setActiveCategory(activeCategory - 1);
         setActiveIndex(categories[activeCategory - 1].experiences.length - 1);
         setTransitioning(false);
       }, 500);
-      return;
-    }
-    
+    } 
     // Regular previous experience in the same category
-    if (activeIndex > 0) {
+    else if (activeIndex > 0) {
       setDirection('prev');
       setTransitioning(true);
       setTimeout(() => {
