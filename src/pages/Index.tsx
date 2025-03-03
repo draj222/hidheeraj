@@ -42,8 +42,9 @@ const Index = () => {
           company: 'UC Berkeley Artificial Intelligence Research (BAIR)',
           period: 'June 2024 - August 2024',
           description: [
-            'Analyzed 5K+ poker pre-flop hands to refine GPT-4 decision-making accuracy by 15%.',
-            'Became the first high school student to join the prestigious BAIR team.'
+            'Analyzed 5K+ poker pre-flop hands',
+            'Revealed GPT-4\'s 75% accuracy, 15% over-raise rate, optimizing LLM\'s',
+            'First high schooler in team'
           ]
         }
       ]
@@ -60,6 +61,15 @@ const Index = () => {
             'Established partnerships with T20 alumni and Fortune 500 professionals, mentoring 10,000+ students globally.',
             'Partnered with governments in Mali and India, positively impacting 300,000+ students.',
             'Secured $30K+ in funds to support underprivileged areas, donating resources like computers and books.'
+          ]
+        },
+        {
+          title: 'Head of Curriculum Development',
+          company: 'Youth Coding Workshops',
+          period: 'January 2023 - Present',
+          description: [
+            'Introduced intense 10-week Python curriculum; tutored 500+ middle schoolers in the Tri-Valley;',
+            'Modified 25+ curriculums; developed first AI/ML course.',
           ]
         },
         {

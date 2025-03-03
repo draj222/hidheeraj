@@ -31,6 +31,20 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
     if (transitioning) return;
     
     const experiences = categories[activeCategory].experiences;
+    
+    // If it's the last experience in the category and not the last category
+    if (activeIndex === experiences.length - 1 && activeCategory < categories.length - 1) {
+      setDirection('next');
+      setTransitioning(true);
+      setTimeout(() => {
+        setActiveCategory(activeCategory + 1);
+        setActiveIndex(0);
+        setTransitioning(false);
+      }, 500);
+      return;
+    }
+    
+    // Regular next experience in the same category
     if (activeIndex < experiences.length - 1) {
       setDirection('next');
       setTransitioning(true);
@@ -44,6 +58,19 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const handlePrev = () => {
     if (transitioning) return;
     
+    // If it's the first experience in the category and not the first category
+    if (activeIndex === 0 && activeCategory > 0) {
+      setDirection('prev');
+      setTransitioning(true);
+      setTimeout(() => {
+        setActiveCategory(activeCategory - 1);
+        setActiveIndex(categories[activeCategory - 1].experiences.length - 1);
+        setTransitioning(false);
+      }, 500);
+      return;
+    }
+    
+    // Regular previous experience in the same category
     if (activeIndex > 0) {
       setDirection('prev');
       setTransitioning(true);
@@ -188,16 +215,14 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
         
         <div className="flex justify-between items-center">
           <div className="text-sm font-mono text-terminal-muted">
-            {isCollectedCategory ? 
-              "1 / 1" : 
-              `${activeIndex + 1} / ${categories[activeCategory].experiences.length}`
-            }
+            {/* Show tab position instead of card position */}
+            {`${activeCategory + 1} / ${categories.length}`}
           </div>
           
           <div className="flex gap-2">
             <button
               onClick={handlePrev}
-              disabled={isCollectedCategory || activeIndex === 0 || transitioning}
+              disabled={(activeCategory === 0 && activeIndex === 0) || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Previous"
             >
@@ -206,7 +231,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
             
             <button
               onClick={handleNext}
-              disabled={isCollectedCategory || activeIndex === categories[activeCategory].experiences.length - 1 || transitioning}
+              disabled={(activeCategory === categories.length - 1 && activeIndex === categories[activeCategory].experiences.length - 1) || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Next"
             >
