@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Award, Medal, Trophy, Certificate } from 'lucide-react';
+import { Award, Medal, Trophy, Beaker } from 'lucide-react';
 
 const Awards = () => {
   const awards = [
@@ -21,7 +21,7 @@ const Awards = () => {
     {
       title: '$3K Research Grant',
       subtitle: 'Issued by Czech Technical University in Prague',
-      icon: <Certificate className="h-5 w-5 text-terminal-highlight" />,
+      icon: <Beaker className="h-5 w-5 text-terminal-highlight" />,
     },
     {
       title: 'Google-Sponsored Hackathon (Stellar Hacks)',

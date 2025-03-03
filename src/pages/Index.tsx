@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -8,14 +7,14 @@ import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Awards from '../components/Awards';
 import Contact from '../components/Contact';
-import { Briefcase, Award, Flask, Users } from 'lucide-react';
+import { Briefcase, Award, Beaker, Users } from 'lucide-react';
 
 const Index = () => {
   // Define experience data for flashcards
   const experienceCategories = [
     {
       title: 'Research',
-      icon: <Flask className="h-4 w-4" />,
+      icon: <Beaker className="h-4 w-4" />,
       experiences: [
         {
           title: 'Founder & CEO',
