@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Terminal as TerminalIcon, Mail, Linkedin, Github } from 'lucide-react';
 
@@ -69,7 +68,7 @@ const Terminal = () => {
             <div className={`flex flex-wrap justify-center gap-4 mt-6 transition-opacity duration-500 ${showLinks ? 'opacity-100' : 'opacity-0'}`}>
               <a 
                 href="mailto:tsaidheeraj@gmail.com" 
-                className="social-button bg-blue-500 hover:bg-blue-600 transition-colors text-white px-6 py-3 rounded-lg flex items-center gap-2 font-medium"
+                className="social-button bg-terminal-highlight hover:bg-terminal-highlight/90 transition-colors text-white px-6 py-3 rounded-lg flex items-center gap-2 font-medium"
                 aria-label="Contact Me"
               >
                 <Mail className="h-5 w-5" />
