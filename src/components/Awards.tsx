@@ -8,7 +8,11 @@ const Awards = () => {
       title: 'USACO Gold Division',
       subtitle: 'Top 7% of competitive programmers nationwide',
       icon: <Trophy className="h-5 w-5 text-terminal-highlight" />,
-      description: 'Achieved elite Gold Division status in the USA Computing Olympiad, a prestigious algorithmic programming competition where only 7% of participants advance beyond Silver Division. Requires mastery of advanced data structures, dynamic programming, and graph algorithms.'
+      description: [
+        'Achieved elite Gold Division status in the USA Computing Olympiad, a prestigious algorithmic programming competition.',
+        'Only 7% of participants advance beyond Silver Division nationwide.',
+        'Requires mastery of advanced data structures, dynamic programming, and graph algorithms.'
+      ]
     },
     {
       title: 'American Invitational Mathematics Examination (AIME 1)',
@@ -19,7 +23,11 @@ const Awards = () => {
       title: 'President\'s Volunteer Service Award',
       subtitle: 'Gold Level',
       icon: <Award className="h-5 w-5 text-terminal-highlight" />,
-      description: 'Received the highest distinction (Gold) awarded by the President of the United States for exceptional community service, requiring 250+ hours of dedicated volunteer work within a 12-month period. Recognized for significant impact and sustained commitment to community development.'
+      description: [
+        'Received the highest distinction (Gold) awarded by the President of the United States for exceptional community service.',
+        'Required 250+ hours of dedicated volunteer work within a 12-month period.',
+        'Recognized for significant impact and sustained commitment to community development.'
+      ]
     },
     {
       title: '$3K Research Grant',
@@ -60,9 +68,15 @@ const Awards = () => {
                   {award.subtitle && (
                     <p className="text-sm text-terminal-muted mb-2">{award.subtitle}</p>
                   )}
-                  {award.description && (
+                  {Array.isArray(award.description) ? (
+                    <ul className="text-xs text-terminal-text/80 list-disc pl-4 space-y-1">
+                      {award.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : award.description ? (
                     <p className="text-xs text-terminal-text/80">{award.description}</p>
-                  )}
+                  ) : null}
                 </div>
               </div>
             ))}
