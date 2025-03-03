@@ -84,7 +84,9 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const handleCategoryChange = (index: number) => {
     if (transitioning || index === activeCategory) return;
     
-    setDirection('next');
+    // Set direction based on the category index
+    const newDirection = index > activeCategory ? 'next' : 'prev';
+    setDirection(newDirection);
     setTransitioning(true);
     setTimeout(() => {
       setActiveCategory(index);
@@ -122,10 +124,12 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
           ))}
         </div>
         
-        <div className="card-container relative min-h-[400px] mb-8">
+        <div className="card-container relative min-h-[400px] mb-8 overflow-hidden">
           {isCollectedCategory ? (
             // Special rendering for Research, Leadership, and Projects categories - all experiences on one card
-            <div className="flashcard-wrapper absolute inset-0 z-10">
+            <div className={`flashcard-wrapper absolute inset-0 z-10 transition-transform duration-500 ease-in-out ${
+              transitioning ? (direction === 'next' ? 'translate-x-[-100%]' : 'translate-x-[100%]') : 'translate-x-0'
+            }`}>
               <div className="flashcard h-full">
                 <div className="terminal-header mb-4">
                   <div className="terminal-dot bg-red-500"></div>
@@ -158,24 +162,30 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
               </div>
             </div>
           ) : (
-            // Normal rendering for other categories
+            // Normal rendering for other categories with enhanced transitions
             categories[activeCategory].experiences.map((exp, index) => {
-              let className = "flashcard-wrapper absolute inset-0 opacity-0 pointer-events-none";
+              let className = "flashcard-wrapper absolute inset-0 opacity-0 pointer-events-none transition-all duration-500 ease-in-out transform";
               
               if (index === activeIndex) {
-                className = "flashcard-wrapper absolute inset-0 z-10";
+                className = "flashcard-wrapper absolute inset-0 z-10 transition-all duration-500 ease-in-out transform";
                 if (transitioning) {
-                  className += " discarded";
+                  className += direction === 'next' ? " -translate-x-full opacity-0" : " translate-x-full opacity-0";
+                } else {
+                  className += " translate-x-0 opacity-100";
                 }
               } else if (direction === 'next' && index === activeIndex + 1) {
-                className = "flashcard-wrapper absolute inset-0 z-0";
+                className = "flashcard-wrapper absolute inset-0 z-0 transition-all duration-500 ease-in-out transform";
                 if (transitioning) {
-                  className += " next";
+                  className += " translate-x-0 opacity-100";
+                } else {
+                  className += " translate-x-full opacity-0";
                 }
               } else if (direction === 'prev' && index === activeIndex - 1) {
-                className = "flashcard-wrapper absolute inset-0 z-0";
+                className = "flashcard-wrapper absolute inset-0 z-0 transition-all duration-500 ease-in-out transform";
                 if (transitioning) {
-                  className += " next";
+                  className += " translate-x-0 opacity-100";
+                } else {
+                  className += " -translate-x-full opacity-0";
                 }
               }
               
@@ -211,6 +221,11 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
               );
             })
           )}
+
+          {/* Add sliding overlay for category transitions */}
+          <div className={`absolute inset-0 bg-terminal-dark/80 z-20 pointer-events-none transition-opacity duration-300 ease-in-out ${
+            transitioning ? 'opacity-50' : 'opacity-0'
+          }`}></div>
         </div>
         
         <div className="flex justify-between items-center">
