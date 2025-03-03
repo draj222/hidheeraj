@@ -48,6 +48,11 @@ const Awards = () => {
       title: 'Google-Sponsored Hackathon (Stellar Hacks)',
       subtitle: '1st Place ($2,000)',
       icon: <Trophy className="h-5 w-5 text-terminal-highlight" />,
+      description: [
+        'Developed "DL-Driven Model Utilizing ML Algorithms for Image Coloration for Anticipation and Mitigation of Hazards in Outer Space."',
+        'Created an innovative computer vision system for astronaut helmets that enhances visibility and identifies micro-meteorites in real-time.',
+        'Solution reduces astronaut mortality risk by providing early warning of potential high-velocity particle impacts during spacewalks.'
+      ]
     },
   ];
 
