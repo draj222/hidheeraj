@@ -19,63 +19,30 @@ type FlashcardsProps = {
 
 const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const [activeCategory, setActiveCategory] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleNext = () => {
-    if (transitioning) return;
+    if (transitioning || activeCategory === categories.length - 1) return;
     
-    const experiences = categories[activeCategory].experiences;
-    
-    // If it's the last experience in the category and not the last category
-    if (activeIndex === experiences.length - 1 && activeCategory < categories.length - 1) {
-      setDirection('next');
-      setTransitioning(true);
-      setTimeout(() => {
-        setActiveCategory(activeCategory + 1);
-        setActiveIndex(0);
-        setTransitioning(false);
-      }, 500);
-      return;
-    }
-    
-    // Regular next experience in the same category
-    if (activeIndex < experiences.length - 1) {
-      setDirection('next');
-      setTransitioning(true);
-      setTimeout(() => {
-        setActiveIndex(activeIndex + 1);
-        setTransitioning(false);
-      }, 500);
-    }
+    setDirection('next');
+    setTransitioning(true);
+    setTimeout(() => {
+      setActiveCategory(activeCategory + 1);
+      setTransitioning(false);
+    }, 500);
   };
 
   const handlePrev = () => {
-    if (transitioning) return;
+    if (transitioning || activeCategory === 0) return;
     
-    // If it's the first experience in the category and not the first category
-    if (activeIndex === 0 && activeCategory > 0) {
-      setDirection('prev');
-      setTransitioning(true);
-      setTimeout(() => {
-        setActiveCategory(activeCategory - 1);
-        setActiveIndex(categories[activeCategory - 1].experiences.length - 1);
-        setTransitioning(false);
-      }, 500);
-      return;
-    }
-    
-    // Regular previous experience in the same category
-    if (activeIndex > 0) {
-      setDirection('prev');
-      setTransitioning(true);
-      setTimeout(() => {
-        setActiveIndex(activeIndex - 1);
-        setTransitioning(false);
-      }, 500);
-    }
+    setDirection('prev');
+    setTransitioning(true);
+    setTimeout(() => {
+      setActiveCategory(activeCategory - 1);
+      setTransitioning(false);
+    }, 500);
   };
 
   const handleCategoryChange = (index: number) => {
@@ -86,7 +53,6 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
     setTransitioning(true);
     setTimeout(() => {
       setActiveCategory(index);
-      setActiveIndex(0);
       setTransitioning(false);
     }, 500);
   };
@@ -96,7 +62,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
     if (containerRef.current) {
       containerRef.current.scrollTop = 0;
     }
-  }, [activeIndex, activeCategory]);
+  }, [activeCategory]);
 
   return (
     <section id="experience" className="py-20 px-4 bg-terminal-darker/30">
@@ -134,29 +100,26 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
               </div>
               
               <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
-                {/* Show the current experience in the active category */}
-                {categories[activeCategory].experiences.map((exp, index) => {
-                  if (index === activeIndex) {
-                    return (
-                      <div key={index}>
-                        <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-                          <p className="text-terminal-green font-medium">{exp.company}</p>
-                          <p className="text-terminal-muted text-sm">{exp.period}</p>
-                        </div>
-                        
-                        <ul className="space-y-3 text-sm">
-                          {exp.description.map((item, i) => (
-                            <li key={i} className="terminal-list-item">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
+                {/* Show ALL experiences in the active category */}
+                <div className="space-y-8">
+                  {categories[activeCategory].experiences.map((exp, index) => (
+                    <div key={index} className="p-4 border border-terminal-highlight/10 rounded-md bg-terminal-dark/50">
+                      <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                        <p className="text-terminal-green font-medium">{exp.company}</p>
+                        <p className="text-terminal-muted text-sm">{exp.period}</p>
                       </div>
-                    );
-                  }
-                  return null;
-                })}
+                      
+                      <ul className="space-y-3 text-sm">
+                        {exp.description.map((item, i) => (
+                          <li key={i} className="terminal-list-item">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -171,7 +134,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
           <div className="flex gap-2">
             <button
               onClick={handlePrev}
-              disabled={(activeCategory === 0 && activeIndex === 0) || transitioning}
+              disabled={activeCategory === 0 || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Previous"
             >
@@ -180,7 +143,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
             
             <button
               onClick={handleNext}
-              disabled={(activeCategory === categories.length - 1 && activeIndex === categories[activeCategory].experiences.length - 1) || transitioning}
+              disabled={activeCategory === categories.length - 1 || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Next"
             >
