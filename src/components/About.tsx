@@ -20,22 +20,26 @@ const About = () => {
               
               <div className="space-y-4 text-sm">
                 <p>
-                  I'm <span className="text-terminal-highlight">Dheeraj Tallapragada</span>, a data science and machine learning enthusiast based in Dublin, California.
+                  Hi! I'm <span className="text-terminal-highlight">Dheeraj</span>, a senior at Dublin High School passionate about Data Science and Machine Learning.
                 </p>
                 
                 <p>
-                  As a high school student with a passion for technology and innovation, I've founded research initiatives,
-                  led sustainability projects, and developed ML models addressing real-world problems in healthcare and environmental monitoring.
+                  Fueled by curiosity and a desire to make an impact, I'm focused on creating data-driven solutions that push boundaries and address real-world challenges. 
+                  I've explored machine learning through various research opportunities in areas like web/app development and predictive modeling.
                 </p>
 
                 <p>
-                  My journey combines rigorous academic pursuits with hands-on leadership experience, allowing me to bridge the gap 
-                  between theoretical knowledge and practical application.
+                  Outside of tech, I'm drawn to literature, sociology, and sports.
                 </p>
 
                 <p>
-                  I'm deeply committed to using technology for positive impact, whether it's through mentoring students globally, 
-                  partnering with governments to improve access to resources, or developing solutions for environmental challenges.
+                  I'd be happy to connect—feel free to reach out!
+                </p>
+                
+                <p>
+                  <a href="mailto:tsaidheeraj@gmail.com" className="text-terminal-highlight hover:underline transition-colors">
+                    tsaidheeraj@gmail.com
+                  </a>
                 </p>
 
                 <div className="code-block mt-6">
