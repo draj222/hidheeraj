@@ -77,23 +77,51 @@ const Education = () => {
                     <div className="grid grid-cols-1 gap-1">
                       <div className="flex">
                         <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
-                        <span className="text-terminal-green">Data_Science/</span>
+                        <span className="text-terminal-green">AP_Computer_Science_Principles/</span>
                       </div>
                       <div className="flex">
                         <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
-                        <span className="text-terminal-green">Computer_Science/</span>
+                        <span className="text-terminal-green">AP_Computer_Science_A/</span>
                       </div>
                       <div className="flex">
                         <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
-                        <span className="text-terminal-green">Calculus/</span>
+                        <span className="text-terminal-green">Calculus_1/</span>
                       </div>
                       <div className="flex">
                         <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
-                        <span className="text-terminal-green">Advanced_STEM/</span>
+                        <span className="text-terminal-green">General_College_Chemistry_1/</span>
                       </div>
                       <div className="flex">
                         <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
-                        <span className="text-terminal-green">Machine_Learning/</span>
+                        <span className="text-terminal-green">Calculus_2_Honors/</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
+                        <span className="text-terminal-green">General_Physics_1/</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
+                        <span className="text-terminal-green">Math_40_Statistics_Probability/</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
+                        <span className="text-terminal-green">DATA_C8_UC_Berkeley/</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
+                        <span className="text-terminal-green">Multivariable_Calculus/</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
+                        <span className="text-terminal-green">Elementary_Linear_Algebra/</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
+                        <span className="text-terminal-green">Ordinary_Differential_Equations/</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-terminal-blue mr-2">drwxr-xr-x</span> 
+                        <span className="text-terminal-green">Computing_Fundamentals_1_C++/</span>
                       </div>
                     </div>
                   </div>
