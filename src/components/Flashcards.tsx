@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Briefcase, Award, Book, Trash2 } from 'lucide-react';
 
 export type Experience = {
@@ -21,7 +21,6 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleNext = () => {
     if (transitioning || activeCategory === categories.length - 1) return;
@@ -56,13 +55,6 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
       setTransitioning(false);
     }, 500);
   };
-
-  useEffect(() => {
-    // Reset the container scroll when changing cards
-    if (containerRef.current) {
-      containerRef.current.scrollTop = 0;
-    }
-  }, [activeCategory]);
 
   return (
     <section id="experience" className="py-20 px-4 bg-terminal-darker/30">
@@ -99,27 +91,25 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
                 </span>
               </div>
               
-              <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
-                {/* Show ALL experiences in the active category */}
-                <div className="space-y-8">
-                  {categories[activeCategory].experiences.map((exp, index) => (
-                    <div key={index} className="p-4 border border-terminal-highlight/10 rounded-md bg-terminal-dark/50">
-                      <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-                        <p className="text-terminal-green font-medium">{exp.company}</p>
-                        <p className="text-terminal-muted text-sm">{exp.period}</p>
-                      </div>
-                      
-                      <ul className="space-y-3 text-sm">
-                        {exp.description.map((item, i) => (
-                          <li key={i} className="terminal-list-item">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-full">
+                {/* Show ALL experiences in the active category as cards in a grid */}
+                {categories[activeCategory].experiences.map((exp, index) => (
+                  <div key={index} className="p-4 border border-terminal-highlight/10 rounded-md bg-terminal-dark/50 flex flex-col h-full">
+                    <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
+                    <div className="flex flex-col mb-3">
+                      <p className="text-terminal-green font-medium text-sm">{exp.company}</p>
+                      <p className="text-terminal-muted text-xs">{exp.period}</p>
                     </div>
-                  ))}
-                </div>
+                    
+                    <ul className="space-y-2 text-xs mt-auto">
+                      {exp.description.map((item, i) => (
+                        <li key={i} className="terminal-list-item">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
