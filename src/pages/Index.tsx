@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -46,26 +45,6 @@ const Index = () => {
             'Developed a system achieving 97.8% accuracy using Random Forest models with wavelet transform features.',
             'Created a real-time gesture recognition framework capable of distinguishing between 6 distinct hand movements.',
             'Demonstrated potential applications in human-computer interfaces and prosthetic control systems.'
-          ]
-        },
-        {
-          title: 'AI Healthcare Solution',
-          company: 'Independent Project',
-          period: '2023',
-          description: [
-            'Developed a machine learning model to predict macular degeneration with high accuracy.',
-            'Published a paper on the application of AI in healthcare diagnostics.',
-            'Project received a $3K research grant from Czech Technical University.'
-          ]
-        },
-        {
-          title: 'Environmental Monitoring System',
-          company: 'Research Initiative',
-          period: '2022 - 2023',
-          description: [
-            'Created an ML-powered air quality prediction system.',
-            'Published research on environmental monitoring techniques.',
-            'Technology designed to support environmental sustainability efforts.'
           ]
         },
         {
