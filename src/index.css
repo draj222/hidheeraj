@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -146,33 +147,37 @@
   .terminal-list-item:before {
     @apply content-['→'] text-terminal-highlight/80 font-mono;
   }
+}
 
-  /* Flashcard animations */
-  .card-container {
-    perspective: 1000px;
-  }
+/* Terminal-style typing animation container */
+.typing-container {
+  @apply relative inline-block overflow-hidden whitespace-nowrap;
+  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
 
-  .flashcard-wrapper {
-    @apply relative transition-all duration-500 transform-gpu;
-  }
+/* Blinking cursor */
+.cursor-blink::after {
+  content: "_";
+  @apply animate-cursor-blink;
+}
 
-  .flashcard-wrapper.active {
-    @apply z-10;
-  }
+/* Flashcard animations */
+.card-container {
+  perspective: 1000px;
+}
 
-  .flashcard-wrapper.slide-out-left {
-    @apply animate-slide-out-left;
-  }
+.flashcard-wrapper {
+  @apply relative transition-all duration-500 transform-gpu;
+}
 
-  .flashcard-wrapper.slide-out-right {
-    @apply animate-slide-out-right;
-  }
+.flashcard-wrapper.active {
+  @apply z-10;
+}
 
-  .flashcard-wrapper.slide-in-right {
-    @apply animate-slide-in-right;
-  }
-  
-  .flashcard-wrapper.slide-in-left {
-    @apply animate-slide-in-left;
-  }
+.flashcard-wrapper.discarded {
+  @apply animate-card-out;
+}
+
+.flashcard-wrapper.next {
+  @apply animate-card-in;
 }
