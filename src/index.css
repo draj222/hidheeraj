@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -141,11 +140,11 @@
   }
 
   .terminal-list-item {
-    @apply flex items-start gap-2 my-2 text-sm;
+    @apply flex items-center py-1 text-sm;
   }
 
   .terminal-list-item:before {
-    @apply content-['→'] text-terminal-highlight/80 font-mono;
+    @apply content-['→'] text-terminal-highlight/80 font-mono mr-1.5 flex-shrink-0;
   }
 }
 

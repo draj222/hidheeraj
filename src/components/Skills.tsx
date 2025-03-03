@@ -32,11 +32,11 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-terminal-darker/30">
+    <section id="skills" className="py-16 md:py-20 px-4 bg-terminal-darker/30">
       <div className="container mx-auto">
         <h2 className="section-heading">Skills</h2>
         
-        <div className="terminal-window w-full mb-8">
+        <div className="terminal-window w-full mb-6 md:mb-8 overflow-x-auto">
           <div className="terminal-header">
             <div className="terminal-dot bg-red-500"></div>
             <div className="terminal-dot bg-yellow-500"></div>
@@ -44,7 +44,7 @@ const Skills = () => {
             <span className="ml-2 text-xs font-mono text-terminal-text/60">skills.py</span>
           </div>
           
-          <div className="terminal-content">
+          <div className="terminal-content text-xs sm:text-sm">
             <div className="code-block">
               <div className="text-terminal-green mb-2"># Skills Overview</div>
               <div className="text-terminal-blue">class</div> <span className="text-terminal-orange">Skills</span>:
@@ -62,19 +62,21 @@ const Skills = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
+        {/* Responsive grid: 1 column on mobile, 2 on tablet, 5 on extra large screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className="terminal-glass p-6 h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-md bg-terminal-highlight/10 flex items-center justify-center text-terminal-highlight">
+            <div key={index} className="terminal-glass p-4 md:p-6 h-full">
+              <div className="flex items-center gap-3 mb-3 md:mb-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-md bg-terminal-highlight/10 flex items-center justify-center text-terminal-highlight">
                   {category.icon}
                 </div>
-                <h3 className="text-terminal-highlight font-mono">{category.title}</h3>
+                <h3 className="text-terminal-highlight font-mono text-sm md:text-base">{category.title}</h3>
               </div>
               
-              <div className="grid grid-cols-3 gap-2">
+              {/* Responsive skill grid - fewer columns on smaller screens */}
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-1 md:gap-2">
                 {category.skills.map((skill, i) => (
-                  <div key={i} className="terminal-list-item text-center text-sm">
+                  <div key={i} className="terminal-list-item text-xs md:text-sm">
                     {skill}
                   </div>
                 ))}
