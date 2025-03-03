@@ -124,7 +124,18 @@ const Index = () => {
             'Co-developed a machine learning powered app that tracks carbon footprint and suggests personalized sustainability actions for users.',
             'Implemented ML algorithms to analyze user behavior patterns and provide tailored eco-friendly recommendations.',
             'Created features to visualize environmental impact metrics and gamify sustainability goals for 500+ users.',
-            'Website: <a href="https://www.acecycle.org/" target="_blank" rel="noopener noreferrer" class="text-terminal-highlight underline">acecycle.org</a>'
+            'Website: acecycle.org'
+          ]
+        },
+        {
+          title: 'QR Code Scanner',
+          company: 'Independent Project',
+          period: '2023',
+          description: [
+            'Developed a cross-device QR scanner that allows users to scan codes with mobile devices and open them directly on their computer.',
+            'Implemented screen-sharing functionality to automatically detect and process QR codes from camera input.',
+            'Created seamless link-opening system to enhance user experience across devices, eliminating manual transfers.',
+            'Utilized computer vision libraries for real-time QR code detection and processing.'
           ]
         },
         {
