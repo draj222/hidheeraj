@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -27,12 +28,23 @@ const Index = () => {
           ]
         },
         {
-          title: 'Independent Researcher',
-          company: 'Mentored by Georgia Tech, Brown, Stanford PhDs',
-          period: 'August 2022 - Present',
+          title: 'Air Quality Prediction Research',
+          company: 'Collaboration with Stanford Postdoc Marek Miltner',
+          period: 'January 2023 - Present',
           description: [
-            'Published two first-author papers on AI applications in healthcare and environmental monitoring.',
-            'Developed ML models for predicting macular degeneration and air quality, securing a $3K research grant.'
+            'Developed deep learning models (LSTM & CNN) for real-time air quality prediction with 99.87-100% accuracy.',
+            'Created a framework to detect abnormal air quality patterns for PM2.5 and ozone pollutants.',
+            'Received $3K research grant from Czech Technical University in Prague, awaiting publication in Wiley.'
+          ]
+        },
+        {
+          title: 'Macular Degeneration AI Detection',
+          company: 'Collaboration with Georgia Tech PhD Student Aniket Venkatesh',
+          period: 'August 2022 - December 2022',
+          description: [
+            'Implemented ML models for early macular degeneration detection, achieving 94.6% accuracy on validation data.',
+            'Developed a diagnostic tool to help identify AMD patients from retinal images at early stages.',
+            'Published first-author paper in IJARCCE demonstrating potential for AI-assisted AMD diagnosis.'
           ]
         },
         {
