@@ -26,26 +26,6 @@ const Index = () => {
             'Created a framework to detect abnormal air quality patterns for PM2.5 and ozone pollutants.',
             'Received $3K research grant from Czech Technical University in Prague, awaiting publication in Wiley.'
           ]
-        },
-        {
-          title: 'Macular Degeneration AI Detection',
-          company: 'Collaboration with Georgia Tech PhD Student Aniket Venkatesh',
-          period: 'August 2022 - December 2022',
-          description: [
-            'Implemented ML models for early macular degeneration detection, achieving 94.6% accuracy on validation data.',
-            'Developed a diagnostic tool to help identify AMD patients from retinal images at early stages.',
-            'Published first-author paper in IJARCCE demonstrating potential for AI-assisted AMD diagnosis.'
-          ]
-        },
-        {
-          title: 'Research Intern',
-          company: 'UC Berkeley Artificial Intelligence Research (BAIR)',
-          period: 'June 2024 - August 2024',
-          description: [
-            'Analyzed 5K+ poker pre-flop hands',
-            'Revealed GPT-4\'s 75% accuracy, 15% over-raise rate, optimizing LLM\'s',
-            'First high schooler in team'
-          ]
         }
       ]
     },
@@ -62,53 +42,6 @@ const Index = () => {
             'Partnered with governments in Mali and India, positively impacting 300,000+ students.',
             'Secured $30K+ in funds to support underprivileged areas, donating resources like computers and books.'
           ]
-        },
-        {
-          title: 'Head of Curriculum Development',
-          company: 'Youth Coding Workshops',
-          period: 'January 2023 - Present',
-          description: [
-            'Introduced intense 10-week Python curriculum; tutored 500+ middle schoolers in the Tri-Valley;',
-            'Modified 25+ curriculums; developed first AI/ML course.',
-          ]
-        },
-        {
-          title: 'Co-President',
-          company: 'AceCycle',
-          period: 'May 2024 - Present',
-          description: [
-            'Spearheaded sustainability efforts by donating 450K+ tennis balls to pet stores and recycling facilities.',
-            'Co-developed a carbon footprint tracking app with 500+ downloads.',
-            'Founded and expanded 5+ chapters globally, raising environmental awareness.'
-          ]
-        },
-        {
-          title: 'Executive Director',
-          company: 'Engen Learning',
-          period: 'June 2023 - Present',
-          description: [
-            'Enhanced website design, increasing user signups by 30%.',
-            'Led 10+ bootcamps and organized global hackathons with 200+ participants.',
-            'Secured $10K in sponsorships from leading organizations to fund educational events.'
-          ]
-        },
-        {
-          title: 'Middle College Representative',
-          company: 'Las Positas College',
-          period: 'November 2023 - May 2024',
-          description: [
-            'Advocated for diversity and equity, organizing 25+ events and addressing food insecurity through 15+ food drives.',
-            'Acted as a liaison between students and administration to foster community belonging.'
-          ]
-        },
-        {
-          title: 'Assistant Tennis Coach & Tournament Director',
-          company: 'Arora Tennis & Fitness',
-          period: 'September 2024 - Present',
-          description: [
-            'Coached 100+ students in weekly classes, improving technical tennis skills.',
-            'Directed tournaments with 50+ participants, resolving conflicts and ensuring fair play.'
-          ]
         }
       ]
     },
@@ -124,26 +57,6 @@ const Index = () => {
             'Developed a machine learning model to predict macular degeneration with high accuracy.',
             'Published a paper on the application of AI in healthcare diagnostics.',
             'Project received a $3K research grant from Czech Technical University.'
-          ]
-        },
-        {
-          title: 'Environmental Monitoring System',
-          company: 'Research Initiative',
-          period: '2022 - 2023',
-          description: [
-            'Created an ML-powered air quality prediction system.',
-            'Published research on environmental monitoring techniques.',
-            'Technology designed to support environmental sustainability efforts.'
-          ]
-        },
-        {
-          title: 'Carbon Footprint Tracking App',
-          company: 'AceCycle Initiative',
-          period: '2024',
-          description: [
-            'Co-developed a mobile application to help users track and reduce their carbon footprint.',
-            'App achieved 500+ downloads.',
-            'Used to raise awareness about personal environmental impact.'
           ]
         }
       ]

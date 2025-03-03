@@ -91,25 +91,31 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
                 </span>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-full">
-                {/* Show ALL experiences in the active category as cards in a grid */}
-                {categories[activeCategory].experiences.map((exp, index) => (
-                  <div key={index} className="p-4 border border-terminal-highlight/10 rounded-md bg-terminal-dark/50 flex flex-col h-full">
-                    <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
-                    <div className="flex flex-col mb-3">
-                      <p className="text-terminal-green font-medium text-sm">{exp.company}</p>
-                      <p className="text-terminal-muted text-xs">{exp.period}</p>
+              <div className="p-4 border border-terminal-highlight/10 rounded-md bg-terminal-dark/50">
+                {/* Only show the first experience of the active category */}
+                {categories[activeCategory].experiences.length > 0 && (
+                  <>
+                    <h3 className="font-mono text-lg text-terminal-highlight mb-1">
+                      {categories[activeCategory].experiences[0].title}
+                    </h3>
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                      <p className="text-terminal-green font-medium">
+                        {categories[activeCategory].experiences[0].company}
+                      </p>
+                      <p className="text-terminal-muted text-sm">
+                        {categories[activeCategory].experiences[0].period}
+                      </p>
                     </div>
                     
-                    <ul className="space-y-2 text-xs mt-auto">
-                      {exp.description.map((item, i) => (
+                    <ul className="space-y-3 text-sm">
+                      {categories[activeCategory].experiences[0].description.map((item, i) => (
                         <li key={i} className="terminal-list-item">
                           {item}
                         </li>
                       ))}
                     </ul>
-                  </div>
-                ))}
+                  </>
+                )}
               </div>
             </div>
           </div>
