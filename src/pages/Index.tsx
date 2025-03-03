@@ -38,6 +38,37 @@ const Index = () => {
           ]
         },
         {
+          title: 'EMG-Based Gesture Recognition',
+          company: 'Independent Research',
+          period: '2023',
+          description: [
+            'Conducted independent research on multichannel EMG signals for accurate hand gesture recognition using advanced ML techniques.',
+            'Developed a system achieving 97.8% accuracy using Random Forest models with wavelet transform features.',
+            'Created a real-time gesture recognition framework capable of distinguishing between 6 distinct hand movements.',
+            'Demonstrated potential applications in human-computer interfaces and prosthetic control systems.'
+          ]
+        },
+        {
+          title: 'AI Healthcare Solution',
+          company: 'Independent Project',
+          period: '2023',
+          description: [
+            'Developed a machine learning model to predict macular degeneration with high accuracy.',
+            'Published a paper on the application of AI in healthcare diagnostics.',
+            'Project received a $3K research grant from Czech Technical University.'
+          ]
+        },
+        {
+          title: 'Environmental Monitoring System',
+          company: 'Research Initiative',
+          period: '2022 - 2023',
+          description: [
+            'Created an ML-powered air quality prediction system.',
+            'Published research on environmental monitoring techniques.',
+            'Technology designed to support environmental sustainability efforts.'
+          ]
+        },
+        {
           title: 'Research Intern',
           company: 'UC Berkeley Artificial Intelligence Research (BAIR)',
           period: 'June 2024 - August 2024',
@@ -147,37 +178,6 @@ const Index = () => {
             'Implemented screen-sharing functionality to automatically detect and process QR codes from camera input.',
             'Created seamless link-opening system to enhance user experience across devices, eliminating manual transfers.',
             'Utilized computer vision libraries for real-time QR code detection and processing.'
-          ]
-        },
-        {
-          title: 'EMG-Based Gesture Recognition',
-          company: 'Independent Research',
-          period: '2023',
-          description: [
-            'Conducted independent research on multichannel EMG signals for accurate hand gesture recognition using advanced ML techniques.',
-            'Developed a system achieving 97.8% accuracy using Random Forest models with wavelet transform features.',
-            'Created a real-time gesture recognition framework capable of distinguishing between 6 distinct hand movements.',
-            'Demonstrated potential applications in human-computer interfaces and prosthetic control systems.'
-          ]
-        },
-        {
-          title: 'AI Healthcare Solution',
-          company: 'Independent Project',
-          period: '2023',
-          description: [
-            'Developed a machine learning model to predict macular degeneration with high accuracy.',
-            'Published a paper on the application of AI in healthcare diagnostics.',
-            'Project received a $3K research grant from Czech Technical University.'
-          ]
-        },
-        {
-          title: 'Environmental Monitoring System',
-          company: 'Research Initiative',
-          period: '2022 - 2023',
-          description: [
-            'Created an ML-powered air quality prediction system.',
-            'Published research on environmental monitoring techniques.',
-            'Technology designed to support environmental sustainability efforts.'
           ]
         }
       ]
