@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -38,6 +37,16 @@ const Index = () => {
           ]
         },
         {
+          title: 'Research Intern',
+          company: 'UC Berkeley Artificial Intelligence Research (BAIR)',
+          period: 'June 2024 - August 2024',
+          description: [
+            'Analyzed 5K+ poker pre-flop hands',
+            'Revealed GPT-4\'s 75% accuracy, 15% over-raise rate, optimizing LLM\'s',
+            'First high schooler in team'
+          ]
+        },
+        {
           title: 'EMG-Based Gesture Recognition',
           company: 'Independent Research',
           period: '2023',
@@ -68,16 +77,6 @@ const Index = () => {
             'Designed transparent algorithmic processes that provide clear explanations for model decisions and predictions.',
             'Created a framework integrating multiple ML models with explainable components for critical healthcare and financial applications.',
             'Demonstrated how explainability increases user trust and adoption of AI systems in regulated industries.'
-          ]
-        },
-        {
-          title: 'Research Intern',
-          company: 'UC Berkeley Artificial Intelligence Research (BAIR)',
-          period: 'June 2024 - August 2024',
-          description: [
-            'Analyzed 5K+ poker pre-flop hands',
-            'Revealed GPT-4\'s 75% accuracy, 15% over-raise rate, optimizing LLM\'s',
-            'First high schooler in team'
           ]
         }
       ]
