@@ -24,6 +24,9 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Special case for Research category to show all experiences on one page
+  const isResearchCategory = categories[activeCategory]?.title === 'Research';
+
   const handleNext = () => {
     if (transitioning) return;
     
@@ -93,68 +96,108 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
         </div>
         
         <div className="card-container relative min-h-[400px] mb-8">
-          {categories[activeCategory].experiences.map((exp, index) => {
-            let className = "flashcard-wrapper absolute inset-0 opacity-0 pointer-events-none";
-            
-            if (index === activeIndex) {
-              className = "flashcard-wrapper absolute inset-0 z-10";
-              if (transitioning) {
-                className += " discarded";
-              }
-            } else if (direction === 'next' && index === activeIndex + 1) {
-              className = "flashcard-wrapper absolute inset-0 z-0";
-              if (transitioning) {
-                className += " next";
-              }
-            } else if (direction === 'prev' && index === activeIndex - 1) {
-              className = "flashcard-wrapper absolute inset-0 z-0";
-              if (transitioning) {
-                className += " next";
-              }
-            }
-            
-            return (
-              <div key={`${activeCategory}-${index}`} className={className}>
-                <div className="flashcard h-full">
-                  <div className="terminal-header mb-4">
-                    <div className="terminal-dot bg-red-500"></div>
-                    <div className="terminal-dot bg-yellow-500"></div>
-                    <div className="terminal-dot bg-green-500"></div>
-                    <span className="ml-2 text-xs font-mono text-terminal-text/60">
-                      {categories[activeCategory].title.toLowerCase()}/{index + 1}.md
-                    </span>
-                  </div>
-                  
-                  <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
-                    <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
-                    <div className="flex justify-between items-center mb-4">
-                      <p className="text-terminal-green font-medium">{exp.company}</p>
-                      <p className="text-terminal-muted text-sm">{exp.period}</p>
+          {isResearchCategory ? (
+            // Special rendering for Research category - all experiences on one card
+            <div className="flashcard-wrapper absolute inset-0 z-10">
+              <div className="flashcard h-full">
+                <div className="terminal-header mb-4">
+                  <div className="terminal-dot bg-red-500"></div>
+                  <div className="terminal-dot bg-yellow-500"></div>
+                  <div className="terminal-dot bg-green-500"></div>
+                  <span className="ml-2 text-xs font-mono text-terminal-text/60">
+                    {categories[activeCategory].title.toLowerCase()}/all.md
+                  </span>
+                </div>
+                
+                <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
+                  {categories[activeCategory].experiences.map((exp, index) => (
+                    <div key={index} className={index > 0 ? "mt-8 pt-8 border-t border-terminal-highlight/10" : ""}>
+                      <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                        <p className="text-terminal-green font-medium">{exp.company}</p>
+                        <p className="text-terminal-muted text-sm">{exp.period}</p>
+                      </div>
+                      
+                      <ul className="space-y-3 text-sm">
+                        {exp.description.map((item, i) => (
+                          <li key={i} className="terminal-list-item">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    
-                    <ul className="space-y-3 text-sm">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="terminal-list-item">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  ))}
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ) : (
+            // Normal rendering for other categories
+            categories[activeCategory].experiences.map((exp, index) => {
+              let className = "flashcard-wrapper absolute inset-0 opacity-0 pointer-events-none";
+              
+              if (index === activeIndex) {
+                className = "flashcard-wrapper absolute inset-0 z-10";
+                if (transitioning) {
+                  className += " discarded";
+                }
+              } else if (direction === 'next' && index === activeIndex + 1) {
+                className = "flashcard-wrapper absolute inset-0 z-0";
+                if (transitioning) {
+                  className += " next";
+                }
+              } else if (direction === 'prev' && index === activeIndex - 1) {
+                className = "flashcard-wrapper absolute inset-0 z-0";
+                if (transitioning) {
+                  className += " next";
+                }
+              }
+              
+              return (
+                <div key={`${activeCategory}-${index}`} className={className}>
+                  <div className="flashcard h-full">
+                    <div className="terminal-header mb-4">
+                      <div className="terminal-dot bg-red-500"></div>
+                      <div className="terminal-dot bg-yellow-500"></div>
+                      <div className="terminal-dot bg-green-500"></div>
+                      <span className="ml-2 text-xs font-mono text-terminal-text/60">
+                        {categories[activeCategory].title.toLowerCase()}/{index + 1}.md
+                      </span>
+                    </div>
+                    
+                    <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
+                      <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
+                      <div className="flex justify-between items-center mb-4">
+                        <p className="text-terminal-green font-medium">{exp.company}</p>
+                        <p className="text-terminal-muted text-sm">{exp.period}</p>
+                      </div>
+                      
+                      <ul className="space-y-3 text-sm">
+                        {exp.description.map((item, i) => (
+                          <li key={i} className="terminal-list-item">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          )}
         </div>
         
         <div className="flex justify-between items-center">
           <div className="text-sm font-mono text-terminal-muted">
-            {activeIndex + 1} / {categories[activeCategory].experiences.length}
+            {isResearchCategory ? 
+              "1 / 1" : 
+              `${activeIndex + 1} / ${categories[activeCategory].experiences.length}`
+            }
           </div>
           
           <div className="flex gap-2">
             <button
               onClick={handlePrev}
-              disabled={activeIndex === 0 || transitioning}
+              disabled={isResearchCategory || activeIndex === 0 || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Previous"
             >
@@ -163,7 +206,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
             
             <button
               onClick={handleNext}
-              disabled={activeIndex === categories[activeCategory].experiences.length - 1 || transitioning}
+              disabled={isResearchCategory || activeIndex === categories[activeCategory].experiences.length - 1 || transitioning}
               className="p-2 rounded-md bg-terminal-darker text-terminal-text/80 hover:text-terminal-highlight disabled:opacity-50 disabled:pointer-events-none transition-colors"
               aria-label="Next"
             >
