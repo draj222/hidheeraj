@@ -6,17 +6,20 @@ const Awards = () => {
   const awards = [
     {
       title: 'USACO Gold Division',
+      subtitle: 'Top 7% of competitive programmers nationwide',
       icon: <Trophy className="h-5 w-5 text-terminal-highlight" />,
+      description: 'Achieved elite Gold Division status in the USA Computing Olympiad, a prestigious algorithmic programming competition where only 7% of participants advance beyond Silver Division. Requires mastery of advanced data structures, dynamic programming, and graph algorithms.'
     },
     {
-      title: 'American Invitational Mathematics Examination (AIME) Qualifier',
-      subtitle: 'Scored 105/150',
+      title: 'American Invitational Mathematics Examination (AIME 1)',
+      subtitle: 'Scored 10/15',
       icon: <Medal className="h-5 w-5 text-terminal-highlight" />,
     },
     {
       title: 'President\'s Volunteer Service Award',
-      subtitle: 'Gold',
+      subtitle: 'Gold Level',
       icon: <Award className="h-5 w-5 text-terminal-highlight" />,
+      description: 'Received the highest distinction (Gold) awarded by the President of the United States for exceptional community service, requiring 250+ hours of dedicated volunteer work within a 12-month period. Recognized for significant impact and sustained commitment to community development.'
     },
     {
       title: '$3K Research Grant',
@@ -55,7 +58,10 @@ const Awards = () => {
                 <div>
                   <h3 className="text-terminal-highlight font-medium mb-1">{award.title}</h3>
                   {award.subtitle && (
-                    <p className="text-sm text-terminal-muted">{award.subtitle}</p>
+                    <p className="text-sm text-terminal-muted mb-2">{award.subtitle}</p>
+                  )}
+                  {award.description && (
+                    <p className="text-xs text-terminal-text/80">{award.description}</p>
                   )}
                 </div>
               </div>
