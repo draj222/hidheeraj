@@ -24,9 +24,6 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Special case for Research and Leadership categories to show all experiences on one page
-  const isCollectedCategory = ['Research', 'Leadership'].includes(categories[activeCategory]?.title);
-
   const handleNext = () => {
     if (transitioning) return;
     
@@ -124,100 +121,51 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
         </div>
         
         <div className="card-container relative min-h-[400px] mb-8 overflow-hidden">
-          {isCollectedCategory ? (
-            // Special rendering for Research and Leadership categories - all experiences on one card
-            <div className={`flashcard-wrapper absolute inset-0 z-10 ${transitioning ? (direction === 'next' ? 'slide-out-left' : 'slide-out-right') : ''}`}>
-              <div className="flashcard h-full">
-                <div className="terminal-header mb-4">
-                  <div className="terminal-dot bg-red-500"></div>
-                  <div className="terminal-dot bg-yellow-500"></div>
-                  <div className="terminal-dot bg-green-500"></div>
-                  <span className="ml-2 text-xs font-mono text-terminal-text/60">
-                    {categories[activeCategory].title.toLowerCase()}/all.md
-                  </span>
-                </div>
-                
-                <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
-                  {categories[activeCategory].experiences.map((exp, index) => (
-                    <div key={index} className={index > 0 ? "mt-8 pt-8 border-t border-terminal-highlight/10" : ""}>
-                      <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-                        <p className="text-terminal-green font-medium">{exp.company}</p>
-                        <p className="text-terminal-muted text-sm">{exp.period}</p>
+          {/* Render the currently active category */}
+          <div className={`flashcard-wrapper absolute inset-0 z-10 ${transitioning ? (direction === 'next' ? 'slide-out-left' : 'slide-out-right') : ''}`}>
+            <div className="flashcard h-full">
+              <div className="terminal-header mb-4">
+                <div className="terminal-dot bg-red-500"></div>
+                <div className="terminal-dot bg-yellow-500"></div>
+                <div className="terminal-dot bg-green-500"></div>
+                <span className="ml-2 text-xs font-mono text-terminal-text/60">
+                  {categories[activeCategory].title.toLowerCase()}.md
+                </span>
+              </div>
+              
+              <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
+                {/* Show the current experience in the active category */}
+                {categories[activeCategory].experiences.map((exp, index) => {
+                  if (index === activeIndex) {
+                    return (
+                      <div key={index}>
+                        <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                          <p className="text-terminal-green font-medium">{exp.company}</p>
+                          <p className="text-terminal-muted text-sm">{exp.period}</p>
+                        </div>
+                        
+                        <ul className="space-y-3 text-sm">
+                          {exp.description.map((item, i) => (
+                            <li key={i} className="terminal-list-item">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      
-                      <ul className="space-y-3 text-sm">
-                        {exp.description.map((item, i) => (
-                          <li key={i} className="terminal-list-item">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+                    );
+                  }
+                  return null;
+                })}
               </div>
             </div>
-          ) : (
-            // Normal rendering for other categories
-            categories[activeCategory].experiences.map((exp, index) => {
-              let className = "flashcard-wrapper absolute inset-0 opacity-0 pointer-events-none";
-              
-              if (index === activeIndex) {
-                className = "flashcard-wrapper absolute inset-0 z-10";
-                if (transitioning) {
-                  className += direction === 'next' ? " slide-out-left" : " slide-out-right";
-                }
-              } else if (direction === 'next' && index === activeIndex + 1) {
-                className = "flashcard-wrapper absolute inset-0 z-0";
-                if (transitioning) {
-                  className += " slide-in-right";
-                }
-              } else if (direction === 'prev' && index === activeIndex - 1) {
-                className = "flashcard-wrapper absolute inset-0 z-0";
-                if (transitioning) {
-                  className += " slide-in-left";
-                }
-              }
-              
-              return (
-                <div key={`${activeCategory}-${index}`} className={className}>
-                  <div className="flashcard h-full">
-                    <div className="terminal-header mb-4">
-                      <div className="terminal-dot bg-red-500"></div>
-                      <div className="terminal-dot bg-yellow-500"></div>
-                      <div className="terminal-dot bg-green-500"></div>
-                      <span className="ml-2 text-xs font-mono text-terminal-text/60">
-                        {categories[activeCategory].title.toLowerCase()}/{index + 1}.md
-                      </span>
-                    </div>
-                    
-                    <div className="h-full overflow-y-auto pr-2" ref={containerRef}>
-                      <h3 className="font-mono text-lg text-terminal-highlight mb-1">{exp.title}</h3>
-                      <div className="flex justify-between items-center mb-4">
-                        <p className="text-terminal-green font-medium">{exp.company}</p>
-                        <p className="text-terminal-muted text-sm">{exp.period}</p>
-                      </div>
-                      
-                      <ul className="space-y-3 text-sm">
-                        {exp.description.map((item, i) => (
-                          <li key={i} className="terminal-list-item">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              );
-            })
-          )}
+          </div>
         </div>
         
         <div className="flex justify-between items-center">
           <div className="text-sm font-mono text-terminal-muted">
-            {/* Show tab position instead of card position */}
-            {`${activeCategory + 1} / ${categories.length}`}
+            {/* Show category position out of total categories */}
+            {`${activeCategory + 1}/${categories.length}`}
           </div>
           
           <div className="flex gap-2">
