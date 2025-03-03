@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Briefcase, Award, Book, Trash2 } from 'lucide-react';
 
@@ -30,22 +29,19 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const handleNext = () => {
     if (transitioning) return;
     
-    const experiences = categories[activeCategory].experiences;
-    
-    // If it's the last experience in the category and not the last category
-    if (activeIndex === experiences.length - 1 && activeCategory < categories.length - 1) {
+    // If not the last category, move to the next category (regardless of experience index)
+    if (activeCategory < categories.length - 1) {
       setDirection('next');
       setTransitioning(true);
       
-      // Immediately proceed to the next category without requiring additional clicks
       setTimeout(() => {
         setActiveCategory(activeCategory + 1);
         setActiveIndex(0);
         setTransitioning(false);
       }, 500);
     } 
-    // Regular next experience in the same category
-    else if (activeIndex < experiences.length - 1) {
+    // If it's the last category but not the last experience, move to the next experience
+    else if (activeIndex < categories[activeCategory].experiences.length - 1) {
       setDirection('next');
       setTransitioning(true);
       setTimeout(() => {
@@ -58,19 +54,18 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
   const handlePrev = () => {
     if (transitioning) return;
     
-    // If it's the first experience in the category and not the first category
-    if (activeIndex === 0 && activeCategory > 0) {
+    // If not the first category, move to the previous category (regardless of experience index)
+    if (activeCategory > 0) {
       setDirection('prev');
       setTransitioning(true);
       
-      // Immediately go to the previous category without requiring additional clicks
       setTimeout(() => {
         setActiveCategory(activeCategory - 1);
-        setActiveIndex(categories[activeCategory - 1].experiences.length - 1);
+        setActiveIndex(0);
         setTransitioning(false);
       }, 500);
     } 
-    // Regular previous experience in the same category
+    // If it's the first category but not the first experience, move to the previous experience
     else if (activeIndex > 0) {
       setDirection('prev');
       setTransitioning(true);
