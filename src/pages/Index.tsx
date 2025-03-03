@@ -18,16 +18,6 @@ const Index = () => {
       icon: <Beaker className="h-4 w-4" />,
       experiences: [
         {
-          title: 'Founder & CEO',
-          company: 'Phase 1 Research',
-          period: 'February 2024 - Present',
-          description: [
-            'Established partnerships with T20 alumni and Fortune 500 professionals, mentoring 10,000+ students globally.',
-            'Partnered with governments in Mali and India, positively impacting 300,000+ students.',
-            'Secured $30K+ in funds to support underprivileged areas, donating resources like computers and books.'
-          ]
-        },
-        {
           title: 'Air Quality Prediction Research',
           company: 'Collaboration with Stanford Postdoc Marek Miltner',
           period: 'January 2023 - Present',
@@ -62,6 +52,16 @@ const Index = () => {
       title: 'Leadership',
       icon: <Users className="h-4 w-4" />,
       experiences: [
+        {
+          title: 'Founder & CEO',
+          company: 'Phase 1 Research',
+          period: 'February 2024 - Present',
+          description: [
+            'Established partnerships with T20 alumni and Fortune 500 professionals, mentoring 10,000+ students globally.',
+            'Partnered with governments in Mali and India, positively impacting 300,000+ students.',
+            'Secured $30K+ in funds to support underprivileged areas, donating resources like computers and books.'
+          ]
+        },
         {
           title: 'Co-President',
           company: 'AceCycle',
