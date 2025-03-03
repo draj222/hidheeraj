@@ -20,7 +20,7 @@ const Index = () => {
         {
           title: 'Air Quality Prediction Research',
           company: 'Collaboration with Stanford Postdoc Marek Miltner',
-          period: 'January 2023 - Present',
+          period: '2023',
           description: [
             'Developed deep learning models (LSTM & CNN) for real-time air quality prediction with 99.87-100% accuracy.',
             'Created a framework to detect abnormal air quality patterns for PM2.5 and ozone pollutants.',
@@ -30,7 +30,7 @@ const Index = () => {
         {
           title: 'Macular Degeneration AI Detection',
           company: 'Collaboration with Georgia Tech PhD Student Aniket Venkatesh',
-          period: 'August 2022 - December 2022',
+          period: '2022',
           description: [
             'Implemented ML models for early macular degeneration detection, achieving 94.6% accuracy on validation data.',
             'Developed a diagnostic tool to help identify AMD patients from retinal images at early stages.',
@@ -40,7 +40,7 @@ const Index = () => {
         {
           title: 'Research Intern',
           company: 'UC Berkeley Artificial Intelligence Research (BAIR)',
-          period: 'June 2024 - August 2024',
+          period: '2024',
           description: [
             'Analyzed 5K+ poker pre-flop hands',
             'Revealed GPT-4\'s 75% accuracy, 15% over-raise rate, optimizing LLM\'s',
@@ -89,7 +89,7 @@ const Index = () => {
         {
           title: 'Founder & CEO',
           company: 'Phase 1 Research',
-          period: 'February 2024 - Present',
+          period: '2024',
           description: [
             'Established partnerships with T20 alumni and Fortune 500 professionals, mentoring 10,000+ students globally.',
             'Partnered with governments in Mali and India, positively impacting 300,000+ students.',
@@ -99,7 +99,7 @@ const Index = () => {
         {
           title: 'Head of Curriculum Development',
           company: 'Youth Coding Workshops',
-          period: 'January 2023 - Present',
+          period: '2023',
           description: [
             'Introduced intense 10-week Python curriculum; tutored 500+ middle schoolers in the Tri-Valley;',
             'Modified 25+ curriculums; developed first AI/ML course.',
@@ -108,7 +108,7 @@ const Index = () => {
         {
           title: 'Co-President',
           company: 'AceCycle',
-          period: 'May 2024 - Present',
+          period: '2024',
           description: [
             'Spearheaded sustainability efforts by donating 450K+ tennis balls to pet stores and recycling facilities.',
             'Co-developed a carbon footprint tracking app with 500+ downloads.',
@@ -118,7 +118,7 @@ const Index = () => {
         {
           title: 'Executive Director',
           company: 'Engen Learning',
-          period: 'June 2023 - Present',
+          period: '2023',
           description: [
             'Enhanced website design, increasing user signups by 30%.',
             'Led 10+ bootcamps and organized global hackathons with 200+ participants.',
@@ -128,7 +128,7 @@ const Index = () => {
         {
           title: 'Middle College Representative',
           company: 'Las Positas College',
-          period: 'November 2023 - May 2024',
+          period: '2023',
           description: [
             'Advocated for diversity and equity, organizing 25+ events and addressing food insecurity through 15+ food drives.',
             'Acted as a liaison between students and administration to foster community belonging.'
@@ -137,7 +137,7 @@ const Index = () => {
         {
           title: 'Assistant Tennis Coach & Tournament Director',
           company: 'Arora Tennis & Fitness',
-          period: 'September 2024 - Present',
+          period: '2024',
           description: [
             'Coached 100+ students in weekly classes, improving technical tennis skills.',
             'Directed tournaments with 50+ participants, resolving conflicts and ensuring fair play.'
@@ -185,7 +185,7 @@ const Index = () => {
         {
           title: 'Precision Cosine Algorithm',
           company: 'Collaboration with Professor Alain Olavarrieta, Las Positas College',
-          period: 'Spring 2024',
+          period: '2024',
           description: [
             'Developed a Python algorithm calculating cosine values to 15 decimal places using Taylor/Maclaurin series foundations.',
             'Researched mathematical series applications and their real-world correlations to enhance algorithm efficiency.',
