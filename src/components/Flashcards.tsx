@@ -81,43 +81,29 @@ const Flashcards: React.FC<FlashcardsProps> = ({ categories }) => {
         <div className="card-container relative min-h-[400px] mb-8 overflow-hidden">
           {/* Render the currently active category */}
           <div className={`flashcard-wrapper absolute inset-0 z-10 ${transitioning ? (direction === 'next' ? 'slide-out-left' : 'slide-out-right') : ''}`}>
-            <div className="flashcard h-full">
-              <div className="terminal-header mb-4">
-                <div className="terminal-dot bg-red-500"></div>
-                <div className="terminal-dot bg-yellow-500"></div>
-                <div className="terminal-dot bg-green-500"></div>
-                <span className="ml-2 text-xs font-mono text-terminal-text/60">
-                  {categories[activeCategory].title.toLowerCase()}.md
-                </span>
+            {categories[activeCategory].experiences.length > 0 && (
+              <div className="h-full border border-terminal-highlight/10 rounded-md bg-terminal-dark/90 p-6 shadow-lg">
+                <h3 className="font-mono text-lg text-terminal-highlight mb-1">
+                  {categories[activeCategory].experiences[0].title}
+                </h3>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                  <p className="text-terminal-green font-medium">
+                    {categories[activeCategory].experiences[0].company}
+                  </p>
+                  <p className="text-terminal-muted text-sm">
+                    {categories[activeCategory].experiences[0].period}
+                  </p>
+                </div>
+                
+                <ul className="space-y-3 text-sm">
+                  {categories[activeCategory].experiences[0].description.map((item, i) => (
+                    <li key={i} className="terminal-list-item">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
-              <div className="p-4 border border-terminal-highlight/10 rounded-md bg-terminal-dark/50">
-                {/* Only show the first experience of the active category */}
-                {categories[activeCategory].experiences.length > 0 && (
-                  <>
-                    <h3 className="font-mono text-lg text-terminal-highlight mb-1">
-                      {categories[activeCategory].experiences[0].title}
-                    </h3>
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-                      <p className="text-terminal-green font-medium">
-                        {categories[activeCategory].experiences[0].company}
-                      </p>
-                      <p className="text-terminal-muted text-sm">
-                        {categories[activeCategory].experiences[0].period}
-                      </p>
-                    </div>
-                    
-                    <ul className="space-y-3 text-sm">
-                      {categories[activeCategory].experiences[0].description.map((item, i) => (
-                        <li key={i} className="terminal-list-item">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-              </div>
-            </div>
+            )}
           </div>
         </div>
         
