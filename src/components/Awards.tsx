@@ -35,16 +35,6 @@ const Awards = () => {
       ]
     },
     {
-      title: '$3K Research Grant',
-      subtitle: 'Issued by Czech Technical University in Prague',
-      icon: <Beaker className="h-5 w-5 text-terminal-highlight" />,
-      description: [
-        'Awarded competitive funding for innovative environmental modeling research with Dr. Marek Miltner.',
-        'Developed novel neural network architectures for forecasting atmospheric pollutant concentrations.',
-        'Recognized for creating reliable prediction systems with unprecedented accuracy metrics between 99.87-100%.'
-      ]
-    },
-    {
       title: 'Google-Sponsored Hackathon (Stellar Hacks)',
       subtitle: '1st Place ($2,000)',
       icon: <Trophy className="h-5 w-5 text-terminal-highlight" />,

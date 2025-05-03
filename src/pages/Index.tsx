@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -17,16 +16,6 @@ const Index = () => {
       title: 'Research',
       icon: <Beaker className="h-4 w-4" />,
       experiences: [
-        {
-          title: 'Air Quality Prediction Research',
-          company: 'Collaboration with Stanford Postdoc Marek Miltner',
-          period: '2023',
-          description: [
-            'Developed deep learning models (LSTM & CNN) for real-time air quality prediction with 99.87-100% accuracy.',
-            'Created a framework to detect abnormal air quality patterns for PM2.5 and ozone pollutants.',
-            'Received $3K research grant from Czech Technical University in Prague, awaiting publication in Wiley.'
-          ]
-        },
         {
           title: 'Macular Degeneration AI Detection',
           company: 'Collaboration with Georgia Tech PhD Student Aniket Venkatesh',
