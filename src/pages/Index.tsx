@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal';
@@ -6,6 +7,8 @@ import Flashcards from '../components/Flashcards';
 import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Awards from '../components/Awards';
+import Inspiration from '../components/Inspiration';
+import ReadingList from '../components/ReadingList';
 import Contact from '../components/Contact';
 import { Briefcase, Award, Beaker, Users } from 'lucide-react';
 
@@ -205,6 +208,8 @@ const Index = () => {
       <Education />
       <Skills />
       <Awards />
+      <Inspiration />
+      <ReadingList />
       <Contact />
     </Layout>
   );
