@@ -5,6 +5,7 @@ import Terminal from '../components/Terminal';
 import About from '../components/About';
 import Flashcards from '../components/Flashcards';
 import Education from '../components/Education';
+import Career from '../components/Career';
 import Skills from '../components/Skills';
 import Awards from '../components/Awards';
 import Inspiration from '../components/Inspiration';
@@ -206,6 +207,7 @@ const Index = () => {
       <About />
       <Flashcards categories={experienceCategories} />
       <Education />
+      <Career />
       <Skills />
       <Awards />
       <Inspiration />
