@@ -1,38 +1,38 @@
 
 import React from 'react';
-import { Book } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 const ReadingList = () => {
   const books = [
     {
-      title: "1984",
-      author: "George Orwell",
-      description: "A dystopian classic that explores themes of totalitarianism, mass surveillance, and repressive regimentation."
+      title: "Atomic Habits",
+      author: "James Clear",
+      description: "A practical guide to building good habits and breaking bad ones. I want to read this to develop better productivity systems and learn actionable techniques for continuous self-improvement."
     },
     {
       title: "The Museum of Failures",
       author: "Samuel West",
-      description: "A collection of innovation failures and what we can learn from them to create successful products."
+      description: "A collection of innovation failures and what we can learn from them. I'm interested in this book to understand how failure contributes to eventual success and to embrace setbacks as learning opportunities."
     },
     {
       title: "In Our Defense",
       author: "Ellen Alderman & Caroline Kennedy",
-      description: "An exploration of the Bill of Rights and the people whose cases helped define our fundamental rights."
+      description: "An exploration of the Bill of Rights. I want to read this to deepen my understanding of constitutional rights and how they apply to contemporary legal challenges and civic responsibilities."
     },
     {
       title: "Thinking, Fast and Slow",
       author: "Daniel Kahneman",
-      description: "An analysis of the two different systems that drive the way we think and make decisions."
+      description: "An analysis of the two different systems that drive the way we think. I'm eager to explore how cognitive biases affect decision-making and apply these insights to both my personal life and research work."
     },
     {
       title: "The Code Breaker",
       author: "Walter Isaacson",
-      description: "The story of Jennifer Doudna, Nobel Prize winner for her work on CRISPR gene editing technology."
+      description: "The story of Jennifer Doudna and CRISPR gene editing. As someone interested in biotechnology, I want to understand the ethical implications and revolutionary potential of this technology for medicine and society."
     },
     {
       title: "Sapiens: A Brief History of Humankind",
       author: "Yuval Noah Harari",
-      description: "A journey through the history of the human species, from ancient humans to the present day."
+      description: "A journey through human history. I'm fascinated by how our species evolved from hunter-gatherers to creators of complex societies, and want to gain perspective on our collective future challenges."
     }
   ];
 
@@ -56,7 +56,7 @@ const ReadingList = () => {
                 className="p-4 border border-terminal-highlight/10 rounded-lg bg-terminal-black/20 flex flex-col"
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <Book className="h-5 w-5 mt-1 text-terminal-highlight flex-shrink-0" />
+                  <BookOpen className="h-5 w-5 mt-1 text-terminal-highlight flex-shrink-0" />
                   <div>
                     <h3 className="text-terminal-highlight font-medium mb-1">{book.title}</h3>
                     <p className="text-sm text-terminal-muted mb-2">by {book.author}</p>
