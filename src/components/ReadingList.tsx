@@ -11,7 +11,7 @@ const ReadingList = () => {
     },
     {
       title: "The Museum of Failures",
-      author: "Samuel West",
+      author: "Thrity Umrigar",
       description: "A collection of innovation failures and what we can learn from them. I'm interested in this book to understand how failure contributes to eventual success and to embrace setbacks as learning opportunities."
     },
     {
