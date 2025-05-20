@@ -18,6 +18,8 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
+  const resumeUrl = "https://drive.google.com/file/d/1Ez85qMPN80TmnLdg5Vw4iV8D_WPAVv30/view?usp=sharing";
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-terminal-darker/80 backdrop-blur-md shadow-md' : 'bg-transparent'
@@ -56,9 +58,11 @@ const Navbar = () => {
               <Mail className="h-5 w-5" />
             </a>
             <a 
-              href="#" 
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer" 
               className="terminal-button flex items-center gap-2"
-              aria-label="Download Resume"
+              aria-label="View Resume"
             >
               <Download className="h-4 w-4" />
               <span>Resume</span>
@@ -105,9 +109,11 @@ const Navbar = () => {
               <Mail className="h-5 w-5" />
             </a>
             <a 
-              href="#" 
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer" 
               className="terminal-button flex items-center gap-2"
-              aria-label="Download Resume"
+              aria-label="View Resume"
             >
               <Download className="h-4 w-4" />
               <span>Resume</span>
