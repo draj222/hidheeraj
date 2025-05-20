@@ -6,25 +6,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const Career = () => {
   const careerActivities = [
     {
-      title: "Data Science Research Workshop",
-      description: "Participated in a 2-week intensive workshop at Stanford University focusing on machine learning algorithms and their applications in predictive analytics. Worked with real-world datasets to develop models for consumer behavior prediction.",
+      title: "InspiritAI",
+      description: "Participated in an intensive AI program focused on applying machine learning to real-world problems. Worked on projects involving predictive analytics and natural language processing, gaining hands-on experience with various AI frameworks and methodologies.",
       icon: <FileSearch className="h-5 w-5 text-terminal-highlight" />,
-      skills: ["Python for Data Analysis", "Machine Learning Fundamentals", "Statistical Modeling"],
-      insights: "This workshop confirmed my interest in pursuing data science as a career path. I was particularly drawn to how data scientists combine technical skills with domain knowledge to extract meaningful insights.",
+      skills: ["Machine Learning", "Python", "Data Analysis"],
+      insights: "This program solidified my interest in AI and data science, particularly how these technologies can be applied to solve complex real-world problems. The collaborative environment helped me develop both technical and communication skills essential for the field.",
     },
     {
-      title: "Analytics Intern at Local Tech Startup",
-      description: "Volunteered as a data analytics intern at a local startup, helping to organize and analyze customer feedback data. Created visualization dashboards that helped the team identify key areas for product improvement.",
-      icon: <Users className="h-5 w-5 text-terminal-highlight" />,
-      skills: ["Data Visualization", "SQL Querying", "Business Intelligence"],
-      insights: "Working in a fast-paced startup environment showed me how data-driven decision making can directly impact a company's growth. This experience strengthened my resolve to develop expertise in both technical and communication skills.",
-    },
-    {
-      title: "Data Science Career Panel Coordinator",
-      description: "Organized and moderated a career panel at Las Positas College featuring professionals from various data science roles. Connected with industry experts from companies like Google, Netflix, and local data consultancies.",
+      title: "Data C8 @ UC Berkeley",
+      description: "Completed UC Berkeley's renowned data science foundation course focusing on computational and inferential thinking. Worked with real datasets to develop statistical models and data visualizations that provided actionable insights.",
       icon: <FileText className="h-5 w-5 text-terminal-highlight" />,
-      skills: ["Event Planning", "Professional Networking", "Public Speaking"],
-      insights: "Coordinating this event allowed me to gain deeper insights into the diverse career paths within data science. I learned about the importance of continuous learning and specialization in this rapidly evolving field.",
+      skills: ["Statistical Analysis", "Data Visualization", "Python Programming"],
+      insights: "This course exposed me to the rigorous methodologies used in academic data science research. I gained valuable experience in how to properly structure data analysis workflows and communicate findings to both technical and non-technical audiences.",
+    },
+    {
+      title: "AI Developer at Local Tech Startup",
+      description: "Worked as a part-time AI developer at a local technology startup, contributing to the development of machine learning models for customer behavior analysis and product recommendation systems.",
+      icon: <Users className="h-5 w-5 text-terminal-highlight" />,
+      skills: ["AI Model Development", "Algorithm Optimization", "Software Engineering"],
+      insights: "This hands-on experience in a startup environment taught me the importance of balancing theoretical knowledge with practical implementation. I learned how to deploy AI solutions that not only perform well technically but also address real business needs effectively.",
     },
   ];
 
@@ -42,8 +42,8 @@ const Career = () => {
           </div>
           
           <p className="text-terminal-text mb-8">
-            My exploration into data science and analytics has been driven by a passion for uncovering insights from complex datasets 
-            and using those findings to solve real-world problems. Below are some key experiences that have shaped my career interests:
+            My exploration into data science and artificial intelligence has been driven by a passion for extracting meaningful insights 
+            from data and developing intelligent systems. Below are some key experiences that have shaped my career interests:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -82,9 +82,9 @@ const Career = () => {
           <div className="mt-8 p-4 bg-terminal-darker/50 rounded-md border border-terminal-highlight/10">
             <h3 className="text-terminal-highlight font-mono text-sm mb-2">Career Objectives</h3>
             <p className="text-sm text-terminal-text/90">
-              My career exploration has solidified my interest in pursuing data science roles that combine 
-              analytical techniques with domain expertise. I'm particularly interested in how data can be leveraged 
-              to improve decision-making processes and create more efficient, user-centered products and services.
+              My career exploration has solidified my interest in pursuing data science and AI roles that combine 
+              analytical techniques with innovative applications. I'm particularly interested in how AI and data science 
+              can drive decision-making and create impactful solutions across various industries.
             </p>
           </div>
         </div>
@@ -94,3 +94,4 @@ const Career = () => {
 };
 
 export default Career;
+
