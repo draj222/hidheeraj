@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Terminal, Download, Github, Linkedin, Mail } from 'lucide-react';
 
@@ -18,7 +17,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
-  const resumeUrl = "https://drive.google.com/file/d/1Ez85qMPN80TmnLdg5Vw4iV8D_WPAVv30/view?usp=sharing";
+  const resumeUrl = "https://drive.google.com/file/d/1MqVr7GNtGQ4t5L-Yz9WUP3XqtOSUf2U4/view?usp=sharing";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
