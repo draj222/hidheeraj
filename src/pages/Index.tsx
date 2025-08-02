@@ -18,23 +18,11 @@ const Index = () => {
       icon: <Beaker className="h-4 w-4" />,
       experiences: [
         {
-          title: 'Macular Degeneration AI Detection',
-          company: 'Collaboration with Georgia Tech PhD Student Aniket Venkatesh',
-          period: '2022',
+          title: 'Data Analytics Intern',
+          company: 'Kaiser Permanente',
+          period: 'June 2025 - August 2025',
           description: [
-            'Implemented ML models for early macular degeneration detection, achieving 94.6% accuracy on validation data.',
-            'Developed a diagnostic tool to help identify AMD patients from retinal images at early stages.',
-            'Published first-author paper in IJARCCE demonstrating potential for AI-assisted AMD diagnosis.'
-          ]
-        },
-        {
-          title: 'Research Intern',
-          company: 'UC Berkeley Artificial Intelligence Research (BAIR)',
-          period: '2024',
-          description: [
-            'Analyzed 5K+ poker pre-flop hands',
-            'Revealed GPT-4\'s 75% accuracy, 15% over-raise rate, optimizing LLM\'s',
-            'First high schooler in team'
+            '1/200 NCAL high school students to be selected for the KP LAUNCH internship program (~5% acceptance rate)'
           ]
         },
         {
@@ -46,28 +34,6 @@ const Index = () => {
             'Developed a system achieving 97.8% accuracy using Random Forest models with wavelet transform features.',
             'Created a real-time gesture recognition framework capable of distinguishing between 6 distinct hand movements.',
             'Demonstrated potential applications in human-computer interfaces and prosthetic control systems.'
-          ]
-        },
-        {
-          title: 'Sustainable Tennis Ball Management ML Framework',
-          company: 'Independent Research',
-          period: '2023',
-          description: [
-            'Developed an open-access machine learning framework for optimizing tennis ball usage and reducing environmental impact.',
-            'Created a classification system to accurately assess ball condition and determine optimal repurposing paths.',
-            'Implemented a sustainability tracking system reducing waste by 40% at participating tennis facilities.',
-            'Published findings demonstrating significant cost savings and environmental benefits for tennis clubs and stores.'
-          ]
-        },
-        {
-          title: 'Explainable AI for Dynamic Ensemble Models',
-          company: 'Independent Research',
-          period: '2023',
-          description: [
-            'Developed interpretable ensemble models for high-stakes decision-making scenarios with 94% overall accuracy.',
-            'Designed transparent algorithmic processes that provide clear explanations for model decisions and predictions.',
-            'Created a framework integrating multiple ML models with explainable components for critical healthcare and financial applications.',
-            'Demonstrated how explainability increases user trust and adoption of AI systems in regulated industries.'
           ]
         }
       ]
