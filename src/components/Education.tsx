@@ -47,12 +47,12 @@ const Education = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <GraduationCap className="text-terminal-highlight h-5 w-5" />
-                  <h3 className="text-lg font-mono text-terminal-highlight">University of California, Berkeley</h3>
+                  <h3 className="text-lg font-mono text-terminal-highlight">University of Washington</h3>
                 </div>
                 <div className="ml-8">
-                  <p className="text-terminal-muted text-sm">Berkeley, CA</p>
+                  <p className="text-terminal-muted text-sm">Seattle, WA</p>
                   <div className="flex justify-between my-1">
-                    <p className="text-terminal-text">Pre-College Summer Scholars</p>
+                    <p className="text-terminal-text">Incoming Computer Science student</p>
                   </div>
                 </div>
               </div>
