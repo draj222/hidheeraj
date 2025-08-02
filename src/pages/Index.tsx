@@ -42,63 +42,6 @@ const Index = () => {
       title: 'Leadership',
       icon: <Users className="h-4 w-4" />,
       experiences: [
-        {
-          title: 'Founder & CEO',
-          company: 'Phase 1 Research',
-          period: '2024',
-          description: [
-            'Established partnerships with T20 alumni and Fortune 500 professionals, mentoring 10,000+ students globally.',
-            'Partnered with governments in Mali and India, positively impacting 300,000+ students.',
-            'Secured $30K+ in funds to support underprivileged areas, donating resources like computers and books.'
-          ]
-        },
-        {
-          title: 'Head of Curriculum Development',
-          company: 'Youth Coding Workshops',
-          period: '2023',
-          description: [
-            'Introduced intense 10-week Python curriculum; tutored 500+ middle schoolers in the Tri-Valley;',
-            'Modified 25+ curriculums; developed first AI/ML course.',
-          ]
-        },
-        {
-          title: 'Co-President',
-          company: 'AceCycle',
-          period: '2024',
-          description: [
-            'Spearheaded sustainability efforts by donating 450K+ tennis balls to pet stores and recycling facilities.',
-            'Co-developed a carbon footprint tracking app with 500+ downloads.',
-            'Founded and expanded 5+ chapters globally, raising environmental awareness.'
-          ]
-        },
-        {
-          title: 'Executive Director',
-          company: 'Engen Learning',
-          period: '2023',
-          description: [
-            'Enhanced website design, increasing user signups by 30%.',
-            'Led 10+ bootcamps and organized global hackathons with 200+ participants.',
-            'Secured $10K in sponsorships from leading organizations to fund educational events.'
-          ]
-        },
-        {
-          title: 'Middle College Representative',
-          company: 'Las Positas College',
-          period: '2023',
-          description: [
-            'Advocated for diversity and equity, organizing 25+ events and addressing food insecurity through 15+ food drives.',
-            'Acted as a liaison between students and administration to foster community belonging.'
-          ]
-        },
-        {
-          title: 'Assistant Tennis Coach & Tournament Director',
-          company: 'Arora Tennis & Fitness',
-          period: '2024',
-          description: [
-            'Coached 100+ students in weekly classes, improving technical tennis skills.',
-            'Directed tournaments with 50+ participants, resolving conflicts and ensuring fair play.'
-          ]
-        }
       ]
     },
     {
