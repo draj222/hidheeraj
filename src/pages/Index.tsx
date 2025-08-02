@@ -4,7 +4,6 @@ import Terminal from '../components/Terminal';
 import About from '../components/About';
 import Flashcards from '../components/Flashcards';
 import Education from '../components/Education';
-import Career from '../components/Career';
 import Skills from '../components/Skills';
 import Awards from '../components/Awards';
 import Contact from '../components/Contact';
@@ -17,6 +16,15 @@ const Index = () => {
       title: 'Research',
       icon: <Beaker className="h-4 w-4" />,
       experiences: [
+        {
+          title: 'Predicting EV Adoption Rates Using Machine Learning',
+          company: 'Independent Research',
+          period: '2024',
+          description: [
+            'Developed advanced machine learning models to predict electric vehicle adoption rates across Washington State counties, achieving exceptional performance with Test RMSE of 0.0293 and R² of 0.9827.',
+            'Research accepted to IEEE ISTAS 2025 conference, demonstrating the effectiveness of ML approaches for modeling sustainability transitions and policy impact analysis.'
+          ]
+        },
         {
           title: 'Data Analytics Intern',
           company: 'Kaiser Permanente',
@@ -99,7 +107,6 @@ const Index = () => {
       <About />
       <Flashcards categories={experienceCategories} />
       <Education />
-      <Career />
       <Skills />
       <Awards />
       <Contact />
