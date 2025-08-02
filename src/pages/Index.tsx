@@ -49,17 +49,6 @@ const Index = () => {
       icon: <Award className="h-4 w-4" />,
       experiences: [
         {
-          title: 'ResearchLink',
-          company: 'Phase 1 Research',
-          period: '2023',
-          description: [
-            'Developed a platform connecting students with university professors working on active research projects in their fields of interest.',
-            'Implemented a matching algorithm to pair students with professors based on research interests and academic goals.',
-            'Created a personalized email generation system allowing users to automatically draft and customize messages to professors.',
-            'Designed intuitive interface for students to edit email tone and content before sending to potential research mentors.'
-          ]
-        },
-        {
           title: 'AceCycle App',
           company: 'AceCycle Initiative',
           period: '2024',
@@ -90,17 +79,6 @@ const Index = () => {
             'Researched mathematical series applications and their real-world correlations to enhance algorithm efficiency.',
             'Implemented rigorous testing methodologies to validate computational accuracy within system limitations.',
             'Gained valuable experience in advanced mathematical concepts, research methods, and collaborative development.'
-          ]
-        },
-        {
-          title: 'QR Code Scanner',
-          company: 'Independent Project',
-          period: '2023',
-          description: [
-            'Developed a cross-device QR scanner that allows users to scan codes with mobile devices and open them directly on their computer.',
-            'Implemented screen-sharing functionality to automatically detect and process QR codes from camera input.',
-            'Created seamless link-opening system to enhance user experience across devices, eliminating manual transfers.',
-            'Utilized computer vision libraries for real-time QR code detection and processing.'
           ]
         }
       ]
