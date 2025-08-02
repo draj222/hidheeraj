@@ -42,6 +42,14 @@ const Index = () => {
       title: 'Leadership',
       icon: <Users className="h-4 w-4" />,
       experiences: [
+        {
+          title: 'CTO',
+          company: 'Elderly Care Everywhere',
+          period: 'TBD',
+          description: [
+            'TBD'
+          ]
+        }
       ]
     },
     {
