@@ -26,14 +26,6 @@ const Index = () => {
           ]
         },
         {
-          title: 'Data Analytics Intern',
-          company: 'Kaiser Permanente',
-          period: 'June 2025 - August 2025',
-          description: [
-            '1/200 NCAL high school students to be selected for the KP LAUNCH internship program (~5% acceptance rate)'
-          ]
-        },
-        {
           title: 'EMG-Based Gesture Recognition',
           company: 'Independent Research',
           period: '2023',
@@ -42,6 +34,20 @@ const Index = () => {
             'Developed a system achieving 97.8% accuracy using Random Forest models with wavelet transform features.',
             'Created a real-time gesture recognition framework capable of distinguishing between 6 distinct hand movements.',
             'Demonstrated potential applications in human-computer interfaces and prosthetic control systems.'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Experience',
+      icon: <Briefcase className="h-4 w-4" />,
+      experiences: [
+        {
+          title: 'Data Analytics Intern',
+          company: 'Kaiser Permanente',
+          period: 'June 2025 - August 2025',
+          description: [
+            '1/200 NCAL high school students to be selected for the KP LAUNCH internship program (~5% acceptance rate)'
           ]
         }
       ]
